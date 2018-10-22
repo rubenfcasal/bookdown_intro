@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Escritura de libros con bookdown</title>
+  <meta name="description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …).">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Escritura de libros con bookdown" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …)." />
+  <meta name="github-repo" content="rubenfcasal/bookdown_intro" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Escritura de libros con bookdown" />
+  
+  <meta name="twitter:description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …)." />
+  
+
+<meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
+
+
+<meta name="date" content="2018-10-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="rmarkdown.html">
+<link rel="next" href="bibliografia.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Escritura de libros con bookdown</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prólogo</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#primeros-pasos"><i class="fa fa-check"></i><b>1.2</b> Primeros pasos</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.3</b> Estructura del libro</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html"><i class="fa fa-check"></i><b>2</b> Archivos de configuración</a><ul>
+<li class="chapter" data-level="2.1" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#encabezado-de-index.rmd-y-archivo-_output.yml"><i class="fa fa-check"></i><b>2.1</b> Encabezado de <em>index.Rmd</em> y archivo <em>_output.yml</em></a></li>
+<li class="chapter" data-level="2.2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#archivo-_bookdown.yml"><i class="fa fa-check"></i><b>2.2</b> Archivo <em>_bookdown.yml</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="componentes.html"><a href="componentes.html"><i class="fa fa-check"></i><b>3</b> Componentes</a><ul>
+<li class="chapter" data-level="3.1" data-path="componentes.html"><a href="componentes.html#introduccion"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="componentes.html"><a href="componentes.html#secciones-y-cabeceras"><i class="fa fa-check"></i><b>3.2</b> Secciones y cabeceras</a></li>
+<li class="chapter" data-level="3.3" data-path="componentes.html"><a href="componentes.html#figuras-y-tablas"><i class="fa fa-check"></i><b>3.3</b> Figuras y tablas</a></li>
+<li class="chapter" data-level="3.4" data-path="componentes.html"><a href="componentes.html#ecuaciones"><i class="fa fa-check"></i><b>3.4</b> Ecuaciones</a></li>
+<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#referencias-bibliograficas"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
+<li class="chapter" data-level="3.6" data-path="componentes.html"><a href="componentes.html#entornos"><i class="fa fa-check"></i><b>3.6</b> Entornos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicacion</a><ul>
+<li class="chapter" data-level="4.1" data-path="publicacion.html"><a href="publicacion.html#github"><i class="fa fa-check"></i><b>4.1</b> GitHub Pages</a></li>
+<li class="chapter" data-level="4.2" data-path="publicacion.html"><a href="publicacion.html#licencia"><i class="fa fa-check"></i><b>4.2</b> Licencia</a></li>
+</ul></li>
+<li class="appendix"><span><b>Apéndices</b></span></li>
+<li class="chapter" data-level="A" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>A</b> R Markdown</a><ul>
+<li class="chapter" data-level="A.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introduccion-1"><i class="fa fa-check"></i><b>A.1</b> Introducción</a></li>
+<li class="chapter" data-level="A.2" data-path="rmarkdown.html"><a href="rmarkdown.html#markdown"><i class="fa fa-check"></i><b>A.2</b> Sintaxis de Markdown</a></li>
+<li class="chapter" data-level="A.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>A.3</b> Inclusión de código R</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#graficos"><i class="fa fa-check"></i><b>A.3.1</b> Gráficos</a></li>
+<li class="chapter" data-level="A.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>A.3.2</b> Opciones de bloques de código</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>A.4</b> Tablas</a></li>
+<li class="chapter" data-level="A.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>A.5</b> Cabecera YAML</a></li>
+<li class="chapter" data-level="A.6" data-path="rmarkdown.html"><a href="rmarkdown.html#extraccion-del-codigo-r"><i class="fa fa-check"></i><b>A.6</b> Extracción del código R</a></li>
+<li class="chapter" data-level="A.7" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>A.7</b> Spin</a></li>
+<li class="chapter" data-level="A.8" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>A.8</b> Extensiones RMarkdown de pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="pandoc.html"><a href="pandoc.html"><i class="fa fa-check"></i><b>B</b> Pandoc</a><ul>
+<li class="chapter" data-level="B.1" data-path="pandoc.html"><a href="pandoc.html#introduccion-2"><i class="fa fa-check"></i><b>B.1</b> Introducción</a></li>
+<li class="chapter" data-level="B.2" data-path="pandoc.html"><a href="pandoc.html#conversion"><i class="fa fa-check"></i><b>B.2</b> Conversión de documentos con Pandoc</a></li>
+<li class="chapter" data-level="B.3" data-path="pandoc.html"><a href="pandoc.html#pandoc-y-rmarkdown"><i class="fa fa-check"></i><b>B.3</b> Pandoc y RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Escritura de libros con bookdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pandoc" class="section level1">
+<h1><span class="header-section-number">B</span> Pandoc</h1>
+<div id="introduccion-2" class="section level2">
+<h2><span class="header-section-number">B.1</span> Introducción</h2>
+<p>Pandoc es un conversor de documentos libre y de código abierto, Pandoc puede leer archivos en distintos formatos, incluyendo:</p>
+<ul>
+<li><p>Distintos dialectos de <a href="http://daringfireball.net/projects/markdown/">Markdown</a></p></li>
+<li><p><a href="http://www.w3.org/TR/html40/">HTML</a></p></li>
+<li><p><a href="http://www.latex-project.org/">LaTeX</a></p></li>
+<li><p>Microsoft Word <a href="https://en.wikipedia.org/wiki/Office_Open_XML">docx</a></p></li>
+<li><p>LibreOffice <a href="http://en.wikipedia.org/wiki/OpenDocument">ODT</a></p></li>
+<li><p><a href="http://en.wikipedia.org/wiki/EPUB">EPUB</a></p></li>
+</ul>
+<p>Puede convertir los documentos de entrada a muchos otros formatos, incluyendo Office Open XML, OpenDocument, HTML, Wiki markup, InDesign ICML, ebooks, OPML, y varios formatos basados en TeX (desde donde se puede producir un PDF). En la web oficial <a href="https://pandoc.org" class="uri">https://pandoc.org</a> hay un listado completo de los formatos soportados. Pandoc también proporciona distintas extensiones de Markdown para que admita resultados más complejos.</p>
+<p>Pandoc es una herramienta independiente de línea de comandos (sin interfaz gráfica), que se instala automáticamente con RStudio porque el paquete <code>rmarkdown</code> la emplea para generar los documentos de salida a partir de documentos Markdown (por ejemplo, en Windows en <em>C:\Program Files\RStudio\bin\pandoc\pandoc.exe</em>).</p>
+</div>
+<div id="conversion" class="section level2">
+<h2><span class="header-section-number">B.2</span> Conversión de documentos con Pandoc</h2>
+<p>La sintaxis del comando es <code>pandoc [opciones] [ficheros]</code>. Si se ejecuta <code>pandoc --help</code>, en la ventana de comandos o en la pestaña <em>Terminal</em> de RStudio, se obtiene un listado detallado de las opciones. También se puede consultar el manual de Pandoc <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>.</p>
+<p>Si Pandoc no está configurado en la ruta de búsqueda, habrá que reemplazar <code>pandoc</code> por la ruta completa al ejecutable. Por ejemplo, para emplear la versión instalada con RStudio en Windows habra que introducir <code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot;</code>.</p>
+<p>Podemos emplear Pandoc para convertir contenido escrito en otros formatos a Markdown, por ejemplo:</p>
+<ul>
+<li><p>Un fichero word a markdown</p>
+<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; fichero.docx -f docx -t markdown --extract-media . -o fichero.Rmd </code></pre></li>
+<li><p>Un fichero LaTeX a markdown</p>
+<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; fichero.tex -f latex -t markdown -o fichero.Rmd </code></pre></li>
+<li><p>Una web a markdown</p>
+<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; http://url.org -f html -t markdown -o fichero.Rmd</code></pre></li>
+</ul>
+<p>Por defecto <em>pandoc</em> produce en algunos casos un fragmento de documento (cuando el formato de salida no es markdown). Para obtener un documento independiente (e.g. un fichero HTML válido incluyendo <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>), habrá que emplear la opción <code>-s</code> o <code>--standalone</code>.</p>
+</div>
+<div id="pandoc-y-rmarkdown" class="section level2">
+<h2><span class="header-section-number">B.3</span> Pandoc y RMarkdown</h2>
+<p>Como ya se comentó, el paquete <code>rmarkdown</code> llama a <em>pandoc</em> para renderizar un documento RMarkdown<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, y esta llamada se muestra en la consola (o en la correspondiente pestaña de RStudio):</p>
+<pre><code>&quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS Informes.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output Informes.html --smart --email-obfuscation none --self-contained --standalone --section-divs --table-of-contents --toc-depth 3 --variable toc_float=1 --variable toc_selectors=h1,h2,h3 --variable toc_collapsed=1 --variable toc_smooth_scroll=1 --variable toc_print=1 --template &quot;C:\PROGRA~1\R\R-35~1.1\library\RMARKD~1\rmd\h\DEFAUL~1.HTM&quot; --no-highlight --variable highlightjs=1 --variable &quot;theme:bootstrap&quot; --include-in-header &quot;C:\Users\RUBEN~1.FCA\AppData\Local\Temp\RtmpkntXD8\rmarkdown-str2084caf51da.html&quot; --mathjax --variable &quot;mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;
+
+Output created: Informes.html</code></pre>
+<p>La mayoría de los campos de la cabecera YAML de un fichero RMarkdown se traducen en las opciones de Pandoc. Por ejemplo, la cabezera:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">output:</span>
+  <span class="fu">html_document:</span>
+    <span class="fu">number_sections:</span><span class="at"> yes      </span>
+<span class="ot">---</span></code></pre></div>
+<p>(que produce la numeración de secciones y subsecciones), se corresponde con la opción <code>--number-sections</code> de <em>pandoc</em>. También se puede establecer cualquier opción de Pandoc en la cabecera YAML mediante el campo <code>pandoc_args</code>, por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">output:</span>
+  <span class="fu">html_document:</span><span class="at"> </span>
+    <span class="fu">pandoc_args:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;--number-offset&quot;</span><span class="kw">,</span> <span class="st">&quot;4,0&quot;</span><span class="kw">,</span> <span class="st">&quot;--number-sections&quot;</span><span class="kw">]</span><span class="at">      </span>
+<span class="ot">---</span></code></pre></div>
+<p>(en este caso la numeración comenzaría en 4).</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>Desde la <a href="https://blog.rstudio.org/2014/06/18/r-markdown-v2/">versión 2</a>, antes se utilizaba <code>knitr</code> y <code>markdown</code>.<a href="pandoc.html#fnref10">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rmarkdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliografia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rubenfcasal/bookdown_intro/edit/master/11-pandoc.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown_intro.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

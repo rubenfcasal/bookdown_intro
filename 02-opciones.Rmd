@@ -1,0 +1,150 @@
+# Archivos de configuración
+
+Nos puede interesar modificar el encabezado de *index.Rmd* y 
+un par de archivos [YAML](https://en.wikipedia.org/wiki/YAML) de configuración
+(ver Sección \@ref(yaml) para más detalles sobre este formato). 
+
+## Encabezado de *index.Rmd* y archivo *\_output.yml*
+
+La cabecera YAML del primer archivo *.Rmd* del libro se puede utilizar para configurar
+distintas opciones:
+
+```yaml
+--- 
+title: "A Minimal Book Example"
+author: "Yihui Xie"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+---
+```
+
+Obviamente cambiaremos el título, el nombre del autor y la descripción 
+(también nos podrá interesar cambiar las opciones de bibliografía, ver Sección \@ref(github), 
+o las del repositorio GitHub, ver Sección \@ref(github)). 
+Por ejemplo, se puede acceder al fichero *index.Rmd* de este libro
+[aquí](https://github.com/rubenfcasal/bookdown_intro/raw/master/index.Rmd) .
+
+Aunque se pueden especificar en esta cabecera otras opciones relacionadas con Pandoc,
+como por ejemplo opciones del formato de salida:
+```yaml
+---
+output:
+  bookdown::gitbook:
+    split_by: "section"       # Páginas por secciones (en lugar de capítulos)
+    split_bib: no             # No se muestra bibliografía al final de cada página
+    lib_dir: "book_assets"
+  bookdown::pdf_book:
+    keep_tex: yes
+---
+```
+Normalmente estableceremos las opciones del formato de salida en el 
+archivo de configuración YAML *\_output.yml*. 
+Por defecto se generá el libro en formato HTML (con las opciones de `bookdown::gitbook()`),
+en formato PDF a través de  LaTeX (`bookdown::pdf_book()`) y en formato EPUB (`bookdown::epub_book()`).
+En este archivo también nos interesará cambiar algunas de las opciones por defecto: 
+
+
+```yaml
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">A Minimal Book Example</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+    download: ["pdf", "epub"]
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+bookdown::epub_book: default
+```
+
+Por lo menos en el formato HTML `bookdown::gitbook`, el título del documento en la parte superior de la tabla de contenido.
+El fichero [*\_output.yml*](https://github.com/rubenfcasal/bookdown_intro/blob/master/_output.yml) de este libro es:
+
+```yaml
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Escritura de libros con bookdown</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+    edit: https://github.com/rubenfcasal/bookdown_intro/edit/master/%s      # Si se publica con GitHub Pages...
+    download: "pdf"                                                         # Link de descarga en pdf
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+```
+
+Más detalles sobre las opciones de salida en el [libro de bookdown](https://bookdown.org/yihui/bookdown/output-formats.html).
+Otros ejemplos en castellano de 
+[*index.Rmd*](https://github.com/rubenfcasal/simbook/raw/master/index.Rmd) y 
+[*\_output.yml*](https://github.com/rubenfcasal/simbook/blob/master/_output.yml).
+
+## Archivo *\_bookdown.yml*
+
+El fichero de configuración por defecto es:
+```yaml
+book_filename: "bookdown-demo"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true    
+```
+Por ejemplo, nos interesará cambiar el nombre del fichero y, 
+si se trata de un libro en castellano (galego, ...), el encabezado de los títulos de los capítulos.
+Además nos puede interesar cambiar los encabezados de algunos componentes como figuras y tablas,
+siguiendo las instrucciones de la [Sección 4.5](https://bookdown.org/yihui/bookdown/internationalization.html)
+del libro de bookdown. 
+Por ejemplo en este libro se emplea:
+```yaml
+book_filename: 'bookdown_intro'
+output_dir: docs
+new_session: no
+language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabla '
+    eq: 'Ecuación '
+    thm: 'Teorema '
+    lem: 'Lema '
+    def: 'Definición '
+    cor: 'Corolario '
+    prp: 'Proposición '
+    exm: 'Ejemplo '
+    exr: 'Ejercicio '
+    proof: 'Demostración. '
+    remark: 'Nota: '
+    solution: 'Solución. '
+  ui:
+    chapter_name: 'Capítulo '
+delete_merged_file: yes
+```
+y puede ser descargado [aquí](https://github.com/rubenfcasal/bookdown_intro/raw/master/_bookdown.yml).
+
+Otras opciones permitirían cambiar el orden de los ficheros *.Rmd* (`rmd_files:`) ,
+o establecer y configurar la sesión de R donde se evalúa el código. 
+Por ejemplo:
+```yaml
+new_session: yes                                    # Cada capítulo en una nueva sesión
+before_chapter_script: ["script1.R", "script2.R"]   # Ejecutar código antes de los capítulos
+after_chapter_script: "script3.R"                   # y después.
+```
+Más detalles de las opciones de configuración en el [libro de bookdown](https://bookdown.org/yihui/bookdown/configuration.html#configuration).

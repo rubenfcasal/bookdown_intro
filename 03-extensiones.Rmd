@@ -1,0 +1,203 @@
+# Componentes
+
+## Introducción
+
+Para la elaboración de contenido se pueden emplear las componentes de RMarkdown
+descritas en el Apéndice \@ref(rmarkdown), incluyendo la sistaxis de Markdown (Sección \@ref(markdown))
+y la inclusión de bloques de código en R (Sección \@ref(codigormd)). 
+Pero como se comenta en este Apéndice, RMarkdown admite extensiones adicionales (proporcionadas por Pandoc),
+que pueden ser de utilidad en la escritura de un libro. 
+Por ejemplo, se pueden añadir sub~índices~ y super^índices^ con `sub~índices~` y `super^índices^`,  
+notas al pie con `^[texto]`, ecuaciones y referencias bibliográficas.
+
+El paquete `bookdown` proporciona extensiones adicionales de la sistaxis de RMarkdown 
+especialmente diseñadas para la escritura de libros (ver p.e. la 
+[Sección 2.2](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html) 
+del libro de bookdown), además el comportamiento de algunos resultados 
+cambia al renderizar con este paquete. 
+
+El las siguientes secciones se mostrarán algunas de estas extensiones de RMarkdown y de `bookdown`
+(en el [Capítulo 2](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html) 
+del libro de bookdown se detallan todas las extensiones `bookdown`, incluyendo referencias de texto, 
+bloques personalizados, HTML widgets, páginas web y aplicaciones Shiny).
+
+## Secciones y cabeceras
+
+Como ya se comentó, en el fichero de RMarkdown `.Rmd` de cada capítulo, 
+este está definido por el título de primer nivel (e.g. `# Título`; 
+ver Sección \@ref(markdown) para la sintaxis de los distintos niveles de cabeceras), 
+por lo que solo debería haber uno.
+Además, al renderizar con `bookdown` los capítulos y secciones se numeran automáticamente, siguiendo el orden alfabético de los ficheros. 
+
+Si no se desea numerar algún capítulo o sección, habrá que anádir `{-}` a continuación del correspondiente título (por ejemplo, en el archivo *index.Rmd* se incluyó `# Prólogo {-}`).
+
+Para referenciar un capítulo o sección, se puede añadir una etiqueta de la forma
+`{#etiqueta}` a continuación del correspondiente título, 
+después se podrá referenciar en el texto empleando `\@ref(etiqueta)`, 
+que al renderizar producirá un enlace con la correspondiente numeración 
+(más detalles en la [Sección 2.6](https://bookdown.org/yihui/bookdown/cross-references.html) del libro de bookdown).
+
+Adicionalmente hay dos tipos especiales de cabeceras de primer nivel que pueden ser empleadas en `bookdown`:
+
+-   `# (PARTE) Titulo de la Parte {-}`: para separar capítulos en partes.
+
+-   `# (APPENDIX) Apéndices {-}`: para crear apéndices. Los capítulos posteriores se tratarán como apéndices y se numerarán alfabeticamente (A, B, C, ...).,
+
+
+## Figuras y tablas
+
+En la Sección \@ref(opcodigo) se comentan algunas opciones de los bloques de código que pueden ser de utilidad para las figuras (algunas se pueden establecer en *\_output.yml*, ver Sección \@ref(yaml)).
+Por ejemplo, se puede establecer la opción `fig.cap` para incluir una leyenda 
+(sin incluir sintaxis Markdown, salvo que se utilicen referencias de texto). 
+En ese caso la gráfica se colocará en un entorno de figura (flotante en 
+PDF/LaTeX^[Se puede ajustar las posición empleando la opción de `fig.pos` 
+(por ejemplo, `fig.pos = '!htb'`).]), que se etiquetará y numerará automáticamente.
+
+Para referenciar una figura, habrá que añadir el prefijo `fig:` al nombre del bloque de código. Por ejemplo, la referencia a una figura en un bloque con nombre `foo` será `\@ref(fig:foo)`.
+
+Para incluir imágenes estáticas, en lugar de emplear la sintaxis habitual de markdown
+(e.g. `![](rmarkdown.png)`), se puede llamar a la función `knitr::include_graphics()`
+en un bloque de código para poder emplear las extensiones `bookdown`. Por ejemplo, la figura \@ref(fig:rmarkdown) se incluyó con el siguiente código:
+````markdown
+`r ''````{r rmarkdown, echo=FALSE, out.width='30%', fig.align='center', fig.cap='Logo de rmarkdown (desde archivo PNG).'}
+knitr::include_graphics("images/rmarkdown.png")
+```
+````
+
+```{r rmarkdown, echo=FALSE, out.width='30%', fig.align='center', fig.cap='Logo de rmarkdown (desde archivo PNG).'}
+knitr::include_graphics("images/rmarkdown.png")
+```
+Además puede ser recomendable guardar estas imágenes en un subdirectorio (*images* en el caso de este libro).
+En la [Sección 2.4](https://bookdown.org/yihui/bookdown/figures.html) del libro de bookdown se tienen más detalles sobre las Figuras.
+
+Las tablas se comportan de forma similar. Si se emplea la función `knitr::ktable()` 
+para incluir tablas, como se describe en la Sección \@ref(tablas), 
+estas se colocarán en un entorno de tabla (flotante en 
+PDF/LaTeX), y se etiquetarán y numerarán automáticamente.
+Para referenciarlas, habrá que añadir el prefijo `tab:` al nombre del bloque de código
+(e.g.  `\@ref(tab:foo)`).
+Más detalles en la [Sección 2.5](https://bookdown.org/yihui/bookdown/tables.html)
+del libro de bookdown.
+
+## Ecuaciones
+
+RMarkdown permite incluir expresiones matemáticas en formato LateX:
+
+*   En linea escribiendo la expresión latex entre dos símbolos de dolar, 
+    por ejemplo `$\alpha, \beta, \gamma, \delta$`
+    resultaría en $\alpha, \beta, \gamma, \delta$.
+  
+*   En formato ecuación empleando dos pares de símbolos de dolar. Por ejemplo:
+    ```
+    $$\Theta = \begin{pmatrix}\alpha & \beta\\
+    \gamma & \delta
+    \end{pmatrix}$$
+    ```
+    resultaría en:
+    $$\Theta = \begin{pmatrix}\alpha & \beta\\
+    \gamma & \delta
+    \end{pmatrix}$$
+    
+Adicionalmente en `bookdown` se pueden incluir ecuaciones numeradas (empleando directamente sintaxis LaTeX), que pueden ser referenciadas posteriormente. Por ejemplo: 
+```latex
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  (\#eq:ecuacion1)
+\end
+```
+produce la siguiente ecuación \@ref(eq:ecuacion1):
+\begin{equation}
+f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} (\#eq:ecuacion1)
+\end{equation}    
+que puede ser referenciada con `\@ref(eq:ecuacion1)`
+(más detalles [aquí](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations)).
+  
+
+## Referencias bibliográficas
+
+RMarkdown también admite bibliografía en distintos formatos, ver p.e. <https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html>.
+Por defecto `bookdown` emplea referencias bibliográficas en formato BibTeX
+(lo que se describe con detalle [aquí](https://bookdown.org/yihui/bookdown/citations.html)).
+Para especificar uno o más archivos de bibliografía *.bib*, se usa el campo `bibliography` en el fichero *Index.Rmd*. Por defecto es de la forma:
+```yaml
+---
+bibliography: ["book.bib", "packages.bib"]
+biblio-style: "apalike"
+link-citations: true
+---
+```
+Por ejemplo, una entrada de BibTeX sería:
+
+```bibtex
+@book{xie2016bookdown,
+  title={Bookdown: Authoring Books and Technical Documents with R Markdown},
+  author={Xie, Yihui},
+  year={2016},
+  publisher={Chapman and Hall/CRC}
+}
+```
+Si se añade al fichero *book.bib* podemos referenciarla en el texto 
+empleando^[En RStudio se puede instalar el "[Addin](https://rstudio.github.io/rstudioaddins/)"
+[`citr`](https://github.com/crsh/citr) para insertar
+citas a referencias bibliográficas en formato BibTeX.] 
+`@xie2016bookdown` o `[@xie2016bookdown]`, resultando @xie2016bookdown o [@xie2016bookdown].
+
+Además, en el fichero *index.Rmd* se incluye por defecto el siguiente código:
+```
+# automatically create a bib database for R packages
+knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
+```
+que genera automáticamente el archivo *packages.bib* con las referencias bibliográficas de los
+paquetes especificados (puede interesar añadir los paquetes empleados).
+En el texto RMarkdown estas referencias se incluyen con `@R-paquete` (o `[@R-paquete]`), y
+la referencia a R [@R-base] con `[@R-base]`. 
+
+Pandoc generará el listado de referencias al final del documento, 
+por lo que habría que insertar una última sección `# Bibliografía {-}`
+al generar el libro en dormato HTML (en PDF se hará automáticamente al emplear LaTeX).
+Si además de HTML se empleán otros formatos, se puede añadir el código:
+```markdown
+`r inline2("if (knitr:::is_html_output()) '# Bibliografía {-}'")`
+```
+al final del documento.
+
+
+## Entornos
+
+El paquete `bookdown` proporciona entornos adicionales (numerados y no numerados) 
+que pueden ser de utilidad en la escritura de un libro. 
+En la Tabla  \@ref(tab:theorem-envs) se muestran los tipos de entorno soportados 
+(aunque el nombre mostrado puede variar si se cambió esta opción en el fichero *\_bookdown.yml*).
+
+(ref:theorem-envs) Entornos en `bookdown`.
+
+```{r theorem-envs, echo=FALSE}
+knitr::kable(data.frame(
+  Entorno = names(bookdown:::theorem_abbr),
+  `Nombre mostrado` = unname(unlist(bookdown:::label_names_math)),
+  `Prefijo referencia` = unname(bookdown:::theorem_abbr),
+  stringsAsFactors = FALSE, check.names = FALSE
+), caption = '(ref:theorem-envs)', booktabs = TRUE)
+```
+
+Para usar uno de estos entornos hay que emplear:
+````markdown
+`r ''````{example, label="foo", name="Entornos de bookdown"}
+Esto es un ejemplo.
+```
+````  
+obteniéndose el Ejemplo \@ref(exm:foo), que se puede referenciar con `\@ref(exm:foo)` 
+(más detalles en la 
+[Sección 2.2.2](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems)
+del libro de bookdown).
+
+
+```{example, label="foo", name="Entornos de bookdown"}
+Esto es un ejemplo.
+```
+
+
+
+
+
+

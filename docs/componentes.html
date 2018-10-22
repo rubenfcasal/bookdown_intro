@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Escritura de libros con bookdown</title>
+  <meta name="description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …).">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Escritura de libros con bookdown" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …)." />
+  <meta name="github-repo" content="rubenfcasal/bookdown_intro" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Escritura de libros con bookdown" />
+  
+  <meta name="twitter:description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …)." />
+  
+
+<meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
+
+
+<meta name="date" content="2018-10-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="archivos-de-configuracion.html">
+<link rel="next" href="publicacion.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Escritura de libros con bookdown</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prólogo</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#primeros-pasos"><i class="fa fa-check"></i><b>1.2</b> Primeros pasos</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.3</b> Estructura del libro</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html"><i class="fa fa-check"></i><b>2</b> Archivos de configuración</a><ul>
+<li class="chapter" data-level="2.1" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#encabezado-de-index.rmd-y-archivo-_output.yml"><i class="fa fa-check"></i><b>2.1</b> Encabezado de <em>index.Rmd</em> y archivo <em>_output.yml</em></a></li>
+<li class="chapter" data-level="2.2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#archivo-_bookdown.yml"><i class="fa fa-check"></i><b>2.2</b> Archivo <em>_bookdown.yml</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="componentes.html"><a href="componentes.html"><i class="fa fa-check"></i><b>3</b> Componentes</a><ul>
+<li class="chapter" data-level="3.1" data-path="componentes.html"><a href="componentes.html#introduccion"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="componentes.html"><a href="componentes.html#secciones-y-cabeceras"><i class="fa fa-check"></i><b>3.2</b> Secciones y cabeceras</a></li>
+<li class="chapter" data-level="3.3" data-path="componentes.html"><a href="componentes.html#figuras-y-tablas"><i class="fa fa-check"></i><b>3.3</b> Figuras y tablas</a></li>
+<li class="chapter" data-level="3.4" data-path="componentes.html"><a href="componentes.html#ecuaciones"><i class="fa fa-check"></i><b>3.4</b> Ecuaciones</a></li>
+<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#referencias-bibliograficas"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
+<li class="chapter" data-level="3.6" data-path="componentes.html"><a href="componentes.html#entornos"><i class="fa fa-check"></i><b>3.6</b> Entornos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicacion</a><ul>
+<li class="chapter" data-level="4.1" data-path="publicacion.html"><a href="publicacion.html#github"><i class="fa fa-check"></i><b>4.1</b> GitHub Pages</a></li>
+<li class="chapter" data-level="4.2" data-path="publicacion.html"><a href="publicacion.html#licencia"><i class="fa fa-check"></i><b>4.2</b> Licencia</a></li>
+</ul></li>
+<li class="appendix"><span><b>Apéndices</b></span></li>
+<li class="chapter" data-level="A" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>A</b> R Markdown</a><ul>
+<li class="chapter" data-level="A.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introduccion-1"><i class="fa fa-check"></i><b>A.1</b> Introducción</a></li>
+<li class="chapter" data-level="A.2" data-path="rmarkdown.html"><a href="rmarkdown.html#markdown"><i class="fa fa-check"></i><b>A.2</b> Sintaxis de Markdown</a></li>
+<li class="chapter" data-level="A.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>A.3</b> Inclusión de código R</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#graficos"><i class="fa fa-check"></i><b>A.3.1</b> Gráficos</a></li>
+<li class="chapter" data-level="A.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>A.3.2</b> Opciones de bloques de código</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>A.4</b> Tablas</a></li>
+<li class="chapter" data-level="A.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>A.5</b> Cabecera YAML</a></li>
+<li class="chapter" data-level="A.6" data-path="rmarkdown.html"><a href="rmarkdown.html#extraccion-del-codigo-r"><i class="fa fa-check"></i><b>A.6</b> Extracción del código R</a></li>
+<li class="chapter" data-level="A.7" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>A.7</b> Spin</a></li>
+<li class="chapter" data-level="A.8" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>A.8</b> Extensiones RMarkdown de pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="pandoc.html"><a href="pandoc.html"><i class="fa fa-check"></i><b>B</b> Pandoc</a><ul>
+<li class="chapter" data-level="B.1" data-path="pandoc.html"><a href="pandoc.html#introduccion-2"><i class="fa fa-check"></i><b>B.1</b> Introducción</a></li>
+<li class="chapter" data-level="B.2" data-path="pandoc.html"><a href="pandoc.html#conversion"><i class="fa fa-check"></i><b>B.2</b> Conversión de documentos con Pandoc</a></li>
+<li class="chapter" data-level="B.3" data-path="pandoc.html"><a href="pandoc.html#pandoc-y-rmarkdown"><i class="fa fa-check"></i><b>B.3</b> Pandoc y RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Escritura de libros con bookdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="componentes" class="section level1">
+<h1><span class="header-section-number">Capítulo 3</span> Componentes</h1>
+<div id="introduccion" class="section level2">
+<h2><span class="header-section-number">3.1</span> Introducción</h2>
+<p>Para la elaboración de contenido se pueden emplear las componentes de RMarkdown descritas en el Apéndice <a href="rmarkdown.html#rmarkdown">A</a>, incluyendo la sistaxis de Markdown (Sección <a href="rmarkdown.html#markdown">A.2</a>) y la inclusión de bloques de código en R (Sección <a href="rmarkdown.html#codigormd">A.3</a>). Pero como se comenta en este Apéndice, RMarkdown admite extensiones adicionales (proporcionadas por Pandoc), que pueden ser de utilidad en la escritura de un libro. Por ejemplo, se pueden añadir sub<sub>índices</sub> y super<sup>índices</sup> con <code>sub~índices~</code> y <code>super^índices^</code>,<br />
+notas al pie con <code>^[texto]</code>, ecuaciones y referencias bibliográficas.</p>
+<p>El paquete <code>bookdown</code> proporciona extensiones adicionales de la sistaxis de RMarkdown especialmente diseñadas para la escritura de libros (ver p.e. la <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html">Sección 2.2</a> del libro de bookdown), además el comportamiento de algunos resultados cambia al renderizar con este paquete.</p>
+<p>El las siguientes secciones se mostrarán algunas de estas extensiones de RMarkdown y de <code>bookdown</code> (en el <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html">Capítulo 2</a> del libro de bookdown se detallan todas las extensiones <code>bookdown</code>, incluyendo referencias de texto, bloques personalizados, HTML widgets, páginas web y aplicaciones Shiny).</p>
+</div>
+<div id="secciones-y-cabeceras" class="section level2">
+<h2><span class="header-section-number">3.2</span> Secciones y cabeceras</h2>
+<p>Como ya se comentó, en el fichero de RMarkdown <code>.Rmd</code> de cada capítulo, este está definido por el título de primer nivel (e.g. <code># Título</code>; ver Sección <a href="rmarkdown.html#markdown">A.2</a> para la sintaxis de los distintos niveles de cabeceras), por lo que solo debería haber uno. Además, al renderizar con <code>bookdown</code> los capítulos y secciones se numeran automáticamente, siguiendo el orden alfabético de los ficheros.</p>
+<p>Si no se desea numerar algún capítulo o sección, habrá que anádir <code>{-}</code> a continuación del correspondiente título (por ejemplo, en el archivo <em>index.Rmd</em> se incluyó <code># Prólogo {-}</code>).</p>
+<p>Para referenciar un capítulo o sección, se puede añadir una etiqueta de la forma <code>{#etiqueta}</code> a continuación del correspondiente título, después se podrá referenciar en el texto empleando <code>\@ref(etiqueta)</code>, que al renderizar producirá un enlace con la correspondiente numeración (más detalles en la <a href="https://bookdown.org/yihui/bookdown/cross-references.html">Sección 2.6</a> del libro de bookdown).</p>
+<p>Adicionalmente hay dos tipos especiales de cabeceras de primer nivel que pueden ser empleadas en <code>bookdown</code>:</p>
+<ul>
+<li><p><code># (PARTE) Titulo de la Parte {-}</code>: para separar capítulos en partes.</p></li>
+<li><p><code># (APPENDIX) Apéndices {-}</code>: para crear apéndices. Los capítulos posteriores se tratarán como apéndices y se numerarán alfabeticamente (A, B, C, …).,</p></li>
+</ul>
+</div>
+<div id="figuras-y-tablas" class="section level2">
+<h2><span class="header-section-number">3.3</span> Figuras y tablas</h2>
+<p>En la Sección <a href="rmarkdown.html#opcodigo">A.3.2</a> se comentan algunas opciones de los bloques de código que pueden ser de utilidad para las figuras (algunas se pueden establecer en <em>_output.yml</em>, ver Sección <a href="rmarkdown.html#yaml">A.5</a>). Por ejemplo, se puede establecer la opción <code>fig.cap</code> para incluir una leyenda (sin incluir sintaxis Markdown, salvo que se utilicen referencias de texto). En ese caso la gráfica se colocará en un entorno de figura (flotante en PDF/LaTeX<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>), que se etiquetará y numerará automáticamente.</p>
+<p>Para referenciar una figura, habrá que añadir el prefijo <code>fig:</code> al nombre del bloque de código. Por ejemplo, la referencia a una figura en un bloque con nombre <code>foo</code> será <code>\@ref(fig:foo)</code>.</p>
+<p>Para incluir imágenes estáticas, en lugar de emplear la sintaxis habitual de markdown (e.g. <code>![](rmarkdown.png)</code>), se puede llamar a la función <code>knitr::include_graphics()</code> en un bloque de código para poder emplear las extensiones <code>bookdown</code>. Por ejemplo, la figura <a href="componentes.html#fig:rmarkdown">3.1</a> se incluyó con el siguiente código:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r rmarkdown, echo=FALSE, out.width=&#39;30%&#39;, fig.align=&#39;center&#39;, fig.cap=&#39;Logo de rmarkdown (desde archivo PNG).&#39;}
+knitr::include_graphics(&quot;images/rmarkdown.png&quot;)
+```</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:rmarkdown"></span>
+<img src="images/rmarkdown.png" alt="Logo de rmarkdown (desde archivo PNG)." width="30%" />
+<p class="caption">
+Figura 3.1: Logo de rmarkdown (desde archivo PNG).
+</p>
+</div>
+<p>Además puede ser recomendable guardar estas imágenes en un subdirectorio (<em>images</em> en el caso de este libro). En la <a href="https://bookdown.org/yihui/bookdown/figures.html">Sección 2.4</a> del libro de bookdown se tienen más detalles sobre las Figuras.</p>
+<p>Las tablas se comportan de forma similar. Si se emplea la función <code>knitr::ktable()</code> para incluir tablas, como se describe en la Sección <a href="rmarkdown.html#tablas">A.4</a>, estas se colocarán en un entorno de tabla (flotante en PDF/LaTeX), y se etiquetarán y numerarán automáticamente. Para referenciarlas, habrá que añadir el prefijo <code>tab:</code> al nombre del bloque de código (e.g. <code>\@ref(tab:foo)</code>). Más detalles en la <a href="https://bookdown.org/yihui/bookdown/tables.html">Sección 2.5</a> del libro de bookdown.</p>
+</div>
+<div id="ecuaciones" class="section level2">
+<h2><span class="header-section-number">3.4</span> Ecuaciones</h2>
+<p>RMarkdown permite incluir expresiones matemáticas en formato LateX:</p>
+<ul>
+<li><p>En linea escribiendo la expresión latex entre dos símbolos de dolar, por ejemplo <code>$\alpha, \beta, \gamma, \delta$</code> resultaría en <span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span>.</p></li>
+<li><p>En formato ecuación empleando dos pares de símbolos de dolar. Por ejemplo:</p>
+<pre><code>$$\Theta = \begin{pmatrix}\alpha &amp; \beta\\
+\gamma &amp; \delta
+\end{pmatrix}$$</code></pre>
+<p>resultaría en: <span class="math display">\[\Theta = \begin{pmatrix}\alpha &amp; \beta\\
+\gamma &amp; \delta
+\end{pmatrix}\]</span></p></li>
+</ul>
+<p>Adicionalmente en <code>bookdown</code> se pueden incluir ecuaciones numeradas (empleando directamente sintaxis LaTeX), que pueden ser referenciadas posteriormente. Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="ss"> </span>
+<span class="ss">  f</span><span class="sc">\left</span><span class="ss">(k</span><span class="sc">\right</span><span class="ss">) = </span><span class="sc">\binom</span><span class="ss">{n}{k} p^k</span><span class="sc">\left</span><span class="ss">(1-p</span><span class="sc">\right</span><span class="ss">)^{n-k}</span>
+<span class="ss">  (</span><span class="sc">\#</span><span class="ss">eq:ecuacion1)</span>
+<span class="sc">\end</span></code></pre></div>
+produce la siguiente ecuación <a href="componentes.html#eq:ecuacion1">(3.1)</a>:
+<span class="math display" id="eq:ecuacion1">\[\begin{equation}
+f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \tag{3.1}
+\end{equation}\]</span>
+<p>que puede ser referenciada con <code>\@ref(eq:ecuacion1)</code> (más detalles <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations">aquí</a>).</p>
+</div>
+<div id="referencias-bibliograficas" class="section level2">
+<h2><span class="header-section-number">3.5</span> Referencias bibliográficas</h2>
+<p>RMarkdown también admite bibliografía en distintos formatos, ver p.e. <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html" class="uri">https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html</a>. Por defecto <code>bookdown</code> emplea referencias bibliográficas en formato BibTeX (lo que se describe con detalle <a href="https://bookdown.org/yihui/bookdown/citations.html">aquí</a>). Para especificar uno o más archivos de bibliografía <em>.bib</em>, se usa el campo <code>bibliography</code> en el fichero <em>Index.Rmd</em>. Por defecto es de la forma:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">bibliography:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;book.bib&quot;</span><span class="kw">,</span> <span class="st">&quot;packages.bib&quot;</span><span class="kw">]</span>
+<span class="fu">biblio-style:</span><span class="at"> </span><span class="st">&quot;apalike&quot;</span>
+<span class="fu">link-citations:</span><span class="at"> true</span>
+<span class="ot">---</span></code></pre></div>
+<p>Por ejemplo, una entrada de BibTeX sería:</p>
+<div class="sourceCode"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span class="va">@book</span>{<span class="ot">xie2016bookdown</span>,
+  <span class="dt">title</span>={Bookdown: Authoring Books and Technical Documents with R Markdown},
+  <span class="dt">author</span>={Xie, Yihui},
+  <span class="dt">year</span>={2016},
+  <span class="dt">publisher</span>={Chapman and Hall/CRC}
+}</code></pre></div>
+<p>Si se añade al fichero <em>book.bib</em> podemos referenciarla en el texto empleando<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> <code>@xie2016bookdown</code> o <code>[@xie2016bookdown]</code>, resultando <span class="citation">Xie (<a href="#ref-xie2016bookdown">2016</a>)</span> o <span class="citation">(Xie <a href="#ref-xie2016bookdown">2016</a>)</span>.</p>
+<p>Además, en el fichero <em>index.Rmd</em> se incluye por defecto el siguiente código:</p>
+<pre><code># automatically create a bib database for R packages
+knitr::write_bib(c(.packages(), &#39;bookdown&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;), &#39;packages.bib&#39;)</code></pre>
+<p>que genera automáticamente el archivo <em>packages.bib</em> con las referencias bibliográficas de los paquetes especificados (puede interesar añadir los paquetes empleados). En el texto RMarkdown estas referencias se incluyen con <code>@R-paquete</code> (o <code>[@R-paquete]</code>), y la referencia a R <span class="citation">(R Core Team <a href="#ref-R-base">2018</a>)</span> con <code>[@R-base]</code>.</p>
+<p>Pandoc generará el listado de referencias al final del documento, por lo que habría que insertar una última sección <code># Bibliografía {-}</code> al generar el libro en dormato HTML (en PDF se hará automáticamente al emplear LaTeX). Si además de HTML se empleán otros formatos, se puede añadir el código:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="bn">`r if (knitr:::is_html_output()) &#39;# Bibliografía {-}&#39;`</span></code></pre></div>
+<p>al final del documento.</p>
+</div>
+<div id="entornos" class="section level2">
+<h2><span class="header-section-number">3.6</span> Entornos</h2>
+<p>El paquete <code>bookdown</code> proporciona entornos adicionales (numerados y no numerados) que pueden ser de utilidad en la escritura de un libro. En la Tabla <a href="componentes.html#tab:theorem-envs">3.1</a> se muestran los tipos de entorno soportados (aunque el nombre mostrado puede variar si se cambió esta opción en el fichero <em>_bookdown.yml</em>).</p>
+
+<table>
+<caption><span id="tab:theorem-envs">Tabla 3.1: </span>Entornos en <code>bookdown</code>.</caption>
+<thead>
+<tr class="header">
+<th align="left">Entorno</th>
+<th align="left">Nombre mostrado</th>
+<th align="left">Prefijo referencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">theorem</td>
+<td align="left">Theorem</td>
+<td align="left">thm</td>
+</tr>
+<tr class="even">
+<td align="left">lemma</td>
+<td align="left">Lemma</td>
+<td align="left">lem</td>
+</tr>
+<tr class="odd">
+<td align="left">definition</td>
+<td align="left">Definition</td>
+<td align="left">def</td>
+</tr>
+<tr class="even">
+<td align="left">corollary</td>
+<td align="left">Corollary</td>
+<td align="left">cor</td>
+</tr>
+<tr class="odd">
+<td align="left">proposition</td>
+<td align="left">Proposition</td>
+<td align="left">prp</td>
+</tr>
+<tr class="even">
+<td align="left">example</td>
+<td align="left">Example</td>
+<td align="left">exm</td>
+</tr>
+<tr class="odd">
+<td align="left">exercise</td>
+<td align="left">Exercise</td>
+<td align="left">exr</td>
+</tr>
+</tbody>
+</table>
+<p>Para usar uno de estos entornos hay que emplear:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{example, label=&quot;foo&quot;, name=&quot;Entornos de bookdown&quot;}
+Esto es un ejemplo.
+```</code></pre></div>
+<p>obteniéndose el Ejemplo <a href="componentes.html#exm:foo">3.1</a>, que se puede referenciar con <code>\@ref(exm:foo)</code> (más detalles en la <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems">Sección 2.2.2</a> del libro de bookdown).</p>
+
+<div class="example">
+<span id="exm:foo" class="example"><strong>Ejemplo 3.1  (Entornos de bookdown)  </strong></span>Esto es un ejemplo.
+</div>
+
+
+</div>
+</div>
+<h3>Bibliografía</h3>
+<div id="refs" class="references">
+<div id="ref-xie2016bookdown">
+<p>Xie, Yihui. 2016. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. Chapman; Hall/CRC.</p>
+</div>
+<div id="ref-R-base">
+<p>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p>Se puede ajustar las posición empleando la opción de <code>fig.pos</code> (por ejemplo, <code>fig.pos = '!htb'</code>).<a href="componentes.html#fnref6">↩</a></p></li>
+<li id="fn7"><p>En RStudio se puede instalar el “<a href="https://rstudio.github.io/rstudioaddins/">Addin</a>” <a href="https://github.com/crsh/citr"><code>citr</code></a> para insertar citas a referencias bibliográficas en formato BibTeX.<a href="componentes.html#fnref7">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="archivos-de-configuracion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="publicacion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rubenfcasal/bookdown_intro/edit/master/03-extensiones.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown_intro.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

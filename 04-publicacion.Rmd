@@ -1,0 +1,44 @@
+# Publicacion
+
+
+La "publicación" del libro web puede ser tan simple como subirlo a
+[GitHub](https://help.github.com) (estableciendo antes las opciones 
+que se describen a continuación), aunque también bastaría con subir
+el contenido de la carpeta de salida *\_book* a cualquier servidor web.
+
+
+## GitHub Pages {#github}
+
+Para poder emplear [GitHub Pages](https://pages.github.com) 
+habría que cambiar el directorio de salida en el archivo *\_bookdown.yml*:
+```yaml
+output_dir: "docs"
+```
+Después de generar el libro, crear un fichero *.nojekyll* (vacio) 
+en el nuevo directorio *docs*
+(GitHub procesa los sitios web con Jekyll; 
+e.g. [enlace](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages) ), 
+para lo que bastaría con ejecutar en la consola `file.create('docs/.nojekyll')`.
+Finalmente crear el correspondiente repositorio en GitHub, 
+estableciendo en la configuración de “GitHub Pages” 
+la opción de “Source” como “master branch /docs folder” 
+(p.e. siguiendo estos [pasos](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages)).
+
+Para ir añadiendo contenido a un sitio en GitHub, se puede emplear por ejemplo RStudio (e.g. [R packages](http://r-pkgs.had.co.nz/git.html) 
+by [Hadley Wickham](http://hadley.nz/#code))
+o instalar [GitHub Desktop](https://desktop.github.com)
+(lo que recomendaría en Windows...).
+
+Más información y alternativas en el [libro de bookdown](https://bookdown.org/yihui/bookdown/publishing.html).
+
+
+## Licencia
+
+Es recomendable incluir una licencia, por ejemplo, este libro está bajo una licencia de [Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/deed.es).
+Sin embargo en el libro de 
+[Prácticas de Simulación](https://rubenfcasal.github.io/simbook) 
+se consideró una licencia
+[Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es_ES),
+de forma preliminar...
+
+Se puede incluir la licencia en formato texto en un archivo *LICENSE* en la raiz del proyecto.

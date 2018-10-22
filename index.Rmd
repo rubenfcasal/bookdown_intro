@@ -1,0 +1,39 @@
+--- 
+title: "Escritura de libros con bookdown"
+author: "Fernández-Casal, R. y Cotos-Yáñez, T.R."
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rubenfcasal/bookdown_intro
+description: "Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, ...)."
+---
+
+
+# Prólogo {-}
+
+Este libro es una pequeña guía sobre como emplear el paquete `bookdown` de R para la escritura de libros, incluyendo algunos detalles de configuración para la escritura en otros idiomas distintos del inglés (castellano, galego,...). 
+
+Este mismo libro ha sido escrito en [R-Markdown](http://rmarkdown.rstudio.com) empleando el paquete [`bookdown`](https://bookdown.org/yihui/bookdown/)  y está disponible en el repositorio Github: [rubenfcasal/bookdown_intro](https://github.com/rubenfcasal/bookdown_intro). 
+
+Para generar el libro (compilar) puede ser recomendable instalar la última versión de [RStudio]((https://www.rstudio.com/products/rstudio/download/)) y la versión de desarrollo de `bookdown` disponible en [Github](https://github.com/rstudio/bookdown). 
+En la Sección \@ref(requisitos) se detallan los requisitos necesarios.
+
+```{r echo=FALSE, fig.align='left'}
+knitr::include_graphics("images/by-sa-88x31.png")
+```
+
+Esta obra está bajo una licencia de [Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/deed.es).
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+# funciones auxiliares
+inline <- function(x = "") paste0("`` `r ", x, "` ``")
+inline2 <- function(x = "") paste0("`r ", x, "`")
+```

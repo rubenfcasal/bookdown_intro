@@ -1,0 +1,112 @@
+# Introducción {#intro}
+
+El paquete `bookdown` [@R-bookdown] de R [@R-base] permite escribir libros empleando 
+[R Markdown](http://rmarkdown.rstudio.com) de forma fácil. 
+Sin preocuparse mucho por los detalles de composición 
+se pueden crear libros en distintos formatos (HTML / LaTeX / PDF / EPUB / ...). 
+Además de permitir emplear las extensiones Markdown de Pandoc 
+(notas al pie de página, tablas, citas, ecuaciones LaTeX, …), 
+se pueden emplear extensiones Markdown para libros 
+(leyendas de figuras y tablas, numeración y referencias cruzadas de figuras / tablas / secciones / ecuaciones / teoremas / ejemplos / ..., widgets HTML, ...).
+
+Este libro es una pequeña guía para la escritura de libros con este paquete
+(incluyendo algunos detalles para la escritura en otros idiomas distintos del inglés),
+pero se supone que el lector ya tiene conocimientos de RMarkdown. 
+En el Apéndice \@ref(rmarkdown) se incluye algo de información sobre este lenguaje,
+pero la recomendación sería buscar fuentes adicionales de información si no se conoce,
+empezando por la web <http://rmarkdown.rstudio.com/> y las fuentes descritas en dicho apéndice.
+También recomendamos consultar fuentes externas para obtener documentación detallada sobre los distintos temas, como por ejemplo los libros (disponibles de forma gratuita en línea):
+
+- @R-bookdown : Authoring Books and Technical Documents with R Markdown, 
+  <https://bookdown.org/yihui/bookdown/>.
+
+- @xie2018r : R Markdown: The Definitive Guide, 
+  <https://bookdown.org/yihui/rmarkdown/>.
+
+
+Ejemplos de este tipo de libros 
+^[Los libros de Hadley [Advanced R](http://adv-r.had.co.nz) y [R packages](http://r-pkgs.had.co.nz)
+serían ejemplos con una versión "preliminar" de este paquete.]
+se tienen en https://bookdown.org (el listado completo está disponible [aquí](https://bookdown.org/home/archive/)).
+Además de este, otros libros en castellano que se puede utilizar como ejemplo son:
+
+- [Prácticas de Simulación](https://rubenfcasal.github.io/simbook),
+  disponible en el repositorio de GitHub
+  [rubenfcasal/simbook](https://github.com/rubenfcasal/simbook) 
+  ([Zip](https://github.com/rubenfcasal/simbook/archive/master.zip)).
+  
+- [R para profesionales de los datos: una introducción](https://www.datanalytics.com/libro_r/index.html).
+
+Si ya se dispone de contenido en otros formatos sobre el tema del libro, 
+el primer paso sería su conversión a formato RMarkdown. Para ello se puede emplear Pandoc (ver Apéndice \@ref(pandoc)),
+siguiendo los pasos descritos en la Sección \@ref(conversion).
+
+## Requisitos {#requisitos}
+
+1. Disponer de una versión reciente de RStudio. [Descargar la última versión](https://www.rstudio.com/products/rstudio/download/) si la versión actual es anterior a la 1.0.0.
+1. Instalar el paquete `bookdown` de R:
+
+    ```{r eval=FALSE}
+    # stable version on CRAN
+    install.packages('bookdown')
+    # or development version on GitHub
+    # devtools::install_github('rstudio/bookdown')
+    ```
+
+1. Para compilar los libros en pdf `bookdown` emplea XeLaTeX. En windows es recomendable instalar [MiKTeX](https://miktex.org/download), o actualizarlo (ejecutando MiKTeX Update) si ya está instalado. En Mac OS X se puede instalar [MacTeX](http://www.tug.org/mactex/) y en Linux [TeXLive](http://www.tug.org/texlive) 
+^[Aunque el autor del paquete `bookdown` recomienda instalar [TinyTeX](https://yihui.name/tinytex).].
+
+## Primeros pasos
+
+Si se emplea RStudio (recomendado), lo más cómodo sería crear un proyecto nuevo
+empleando el menú *File > New Project > New Directory > Book project using bookdown*.
+Alternativamente se podría usar como plantilla algún libro publicado 
+(este se puede descargar [aqui](https://github.com/rubenfcasal/bookdown_intro/archive/master.zip)).
+Por ejemplo, el proyecto que crea por defecto RStudio está disponible en el repositorio de GitHub [rstudio/bookdown-demo](https://github.com/rstudio/bookdown-demo) y se puede descargar como fichero
+[Zip](https://github.com/rstudio/bookdown-demo/archive/master.zip).
+Posteriormente se pueden ir modificando (añadiendo o eliminando) los ficheros
+*.Rmd* correspondientes a los distintos capítulos.
+
+Si se abre el proyecto en RStudio, se puede compilar empleando el boton *Build Book*
+^[Alternativamente se puede ejecutar la función `render_book()` en el directorio del proyecto]
+en la pestaña *Build*.
+Por defecto se generará el libro (en los distintos formatos) 
+en la carpeta *\_book* y al terminar se abrirá automáticamente la versión HTML.
+El libro se generará (de forma simultánea en los formatos deseados) a partir de una serie de documentos R Markdown, cada uno correspondiente a un capítulo.
+
+**Nota**: Si se produce un error, puede ser necesario^[Esto debería hacerse automáticamente 
+si se incluye la opción `delete_merged_file: true` en el fichero de configuración *\_bookdown.yml*.]
+eliminar manualmente los ficheros de salida (e.g.  
+*book_filename.Rmd* o *book_filename.md*) para poder volver a compilar.
+
+<!---
+Esto es un comentario de bloque
+
+Cuando se ejecuta la compilación, por defecto se combinan todos los archivos en un `Rmd` y se procede como en R Markdown (Ver Figura 1), estrategia "Merge and Knit". Alternativamente, se puede usar `K-M` ("Knit and Merge"). La diferencia principal es que en `M-K` se corre todo en una única sesión de R.
+
+![**Figura 1**. How to work `Merge and Knit`](bookdown-M-K.png)
+
+![**Figura 2**. How to work ` Knit and Merge`](bookdown-K-M.png)
+-->
+
+## Estructura del libro
+
+La estructura del libro se corresponde con un conjunto de diretorios y ficheros, los principales serían:
+
+- Un fichero inicial de RMarkdown *index.Rmd* con diferentes configuraciones generales (titulo, autor, fecha, ...) y donde se puede incluir un prólogo/preámbulo/prefacio. 
+
+- Un fichero de RMarkdown *.Rmd* para cada capítulo, definido por el título de primer nivel `#`. Los capítulos se ordenarán siguiendo el orden alfabético de los nombres de los ficheros
+^[Evitar espacios (y acentos) en los nombres de los ficheros de los capítulos.].
+
+- Archivo *\_bookdown.yml* de configuración donde se espefican parámetros opcionales para la compilación del libro.
+
+- Archivo *\_output.yml* de configuración con las opciones del formato de salida.
+
+- Archivos *style.css* y *preamble.tex* con especificaciones de las opciones de estilo de los libros en formato HTML e LaTeX, respectivamente.
+
+- Archivo *book.bib* con las referencias biliográficas en formato BibTeX.
+
+Se pueden incluir directorios adicionales, por ejemplo una carpeta *images* que contenga las
+imágenes estáticas.
+
+

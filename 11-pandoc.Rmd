@@ -1,0 +1,91 @@
+Pandoc {#pandoc}
+======
+
+## Introducción
+
+Pandoc es un conversor de documentos libre y de código abierto, 
+Pandoc puede leer archivos en distintos formatos, incluyendo:
+
+- Distintos dialectos de [Markdown](http://daringfireball.net/projects/markdown/)
+
+- [HTML](http://www.w3.org/TR/html40/)
+
+- [LaTeX](http://www.latex-project.org/)
+
+- Microsoft Word [docx](https://en.wikipedia.org/wiki/Office_Open_XML)
+
+- LibreOffice [ODT](http://en.wikipedia.org/wiki/OpenDocument)
+
+- [EPUB](http://en.wikipedia.org/wiki/EPUB)
+
+Puede convertir los documentos de entrada a muchos otros formatos, incluyendo Office Open XML, OpenDocument, HTML, Wiki markup, InDesign ICML, ebooks, OPML, y varios formatos basados en TeX (desde donde se puede producir un PDF).
+En la web oficial <https://pandoc.org> hay un listado completo de los formatos soportados. 
+Pandoc también proporciona distintas extensiones de Markdown para que admita resultados más complejos.
+
+Pandoc es una herramienta independiente de línea de comandos (sin interfaz gráfica), que se instala automáticamente con RStudio porque el paquete `rmarkdown` la emplea para generar los documentos de salida a partir de documentos Markdown
+(por ejemplo, en Windows en *C:\\Program Files\\RStudio\\bin\\pandoc\\pandoc.exe*).
+
+## Conversión de documentos con Pandoc {#conversion}
+
+La sintaxis del comando es `pandoc [opciones] [ficheros]`. Si se ejecuta `pandoc --help`, 
+en la ventana de comandos o en la pestaña *Terminal* de RStudio, se obtiene un listado detallado de las opciones. 
+También se puede consultar el manual de Pandoc <https://pandoc.org/MANUAL.html>.
+
+Si Pandoc no está configurado en la ruta de búsqueda, habrá que reemplazar `pandoc` por la ruta completa al ejecutable.
+Por ejemplo, para emplear la versión instalada con RStudio en Windows habra que introducir `"C:\Program Files\RStudio\bin\pandoc\pandoc"`.
+
+Podemos emplear Pandoc para convertir contenido escrito en otros formatos a Markdown, por ejemplo:
+
+*   Un fichero word a markdown
+    ```
+    "C:\Program Files\RStudio\bin\pandoc\pandoc" fichero.docx -f docx -t markdown --extract-media . -o fichero.Rmd 
+    ```
+
+*   Un fichero LaTeX a markdown
+    ```
+    "C:\Program Files\RStudio\bin\pandoc\pandoc" fichero.tex -f latex -t markdown -o fichero.Rmd 
+    ```
+
+*   Una web a markdown
+    ```
+    "C:\Program Files\RStudio\bin\pandoc\pandoc" http://url.org -f html -t markdown -o fichero.Rmd
+    ```
+    
+Por defecto *pandoc* produce en algunos casos un fragmento de documento 
+(cuando el formato de salida no es markdown). 
+Para obtener un documento independiente (e.g. un fichero HTML válido incluyendo `<head>` y `<body>`), 
+habrá que emplear la opción `-s` o `--standalone`.
+  
+## Pandoc y RMarkdown
+
+Como ya se comentó, el paquete `rmarkdown` llama a *pandoc* para renderizar un documento 
+RMarkdown^[Desde la [versión 2](https://blog.rstudio.org/2014/06/18/r-markdown-v2/), 
+antes se utilizaba `knitr` y `markdown`.], y esta llamada se muestra en la consola 
+(o en la correspondiente pestaña de RStudio):
+
+```
+"C:/Program Files/RStudio/bin/pandoc/pandoc" +RTS -K512m -RTS Informes.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output Informes.html --smart --email-obfuscation none --self-contained --standalone --section-divs --table-of-contents --toc-depth 3 --variable toc_float=1 --variable toc_selectors=h1,h2,h3 --variable toc_collapsed=1 --variable toc_smooth_scroll=1 --variable toc_print=1 --template "C:\PROGRA~1\R\R-35~1.1\library\RMARKD~1\rmd\h\DEFAUL~1.HTM" --no-highlight --variable highlightjs=1 --variable "theme:bootstrap" --include-in-header "C:\Users\RUBEN~1.FCA\AppData\Local\Temp\RtmpkntXD8\rmarkdown-str2084caf51da.html" --mathjax --variable "mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+
+Output created: Informes.html
+```
+La mayoría de los campos de la cabecera YAML de un fichero RMarkdown se traducen en las opciones de Pandoc.
+Por ejemplo, la cabezera:
+```yaml
+---
+output:
+  html_document:
+    number_sections: yes      
+---
+```
+(que produce la numeración de secciones y subsecciones), 
+se corresponde con la opción `--number-sections` de *pandoc*.
+También se puede establecer cualquier opción de Pandoc en la cabecera YAML 
+mediante el campo `pandoc_args`, por ejemplo:
+```yaml
+---
+output:
+  html_document: 
+    pandoc_args: ["--number-offset", "4,0", "--number-sections"]      
+---
+```
+(en este caso la numeración comenzaría en 4).

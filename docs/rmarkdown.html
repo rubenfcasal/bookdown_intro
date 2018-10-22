@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Escritura de libros con bookdown</title>
+  <meta name="description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …).">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Escritura de libros con bookdown" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …)." />
+  <meta name="github-repo" content="rubenfcasal/bookdown_intro" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Escritura de libros con bookdown" />
+  
+  <meta name="twitter:description" content="Este libro es una introducción al paquete bookdown para la escritura de libros (en castellano, galego, …)." />
+  
+
+<meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
+
+
+<meta name="date" content="2018-10-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="publicacion.html">
+<link rel="next" href="pandoc.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Escritura de libros con bookdown</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prólogo</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#primeros-pasos"><i class="fa fa-check"></i><b>1.2</b> Primeros pasos</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.3</b> Estructura del libro</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html"><i class="fa fa-check"></i><b>2</b> Archivos de configuración</a><ul>
+<li class="chapter" data-level="2.1" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#encabezado-de-index.rmd-y-archivo-_output.yml"><i class="fa fa-check"></i><b>2.1</b> Encabezado de <em>index.Rmd</em> y archivo <em>_output.yml</em></a></li>
+<li class="chapter" data-level="2.2" data-path="archivos-de-configuracion.html"><a href="archivos-de-configuracion.html#archivo-_bookdown.yml"><i class="fa fa-check"></i><b>2.2</b> Archivo <em>_bookdown.yml</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="componentes.html"><a href="componentes.html"><i class="fa fa-check"></i><b>3</b> Componentes</a><ul>
+<li class="chapter" data-level="3.1" data-path="componentes.html"><a href="componentes.html#introduccion"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="componentes.html"><a href="componentes.html#secciones-y-cabeceras"><i class="fa fa-check"></i><b>3.2</b> Secciones y cabeceras</a></li>
+<li class="chapter" data-level="3.3" data-path="componentes.html"><a href="componentes.html#figuras-y-tablas"><i class="fa fa-check"></i><b>3.3</b> Figuras y tablas</a></li>
+<li class="chapter" data-level="3.4" data-path="componentes.html"><a href="componentes.html#ecuaciones"><i class="fa fa-check"></i><b>3.4</b> Ecuaciones</a></li>
+<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#referencias-bibliograficas"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
+<li class="chapter" data-level="3.6" data-path="componentes.html"><a href="componentes.html#entornos"><i class="fa fa-check"></i><b>3.6</b> Entornos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicacion</a><ul>
+<li class="chapter" data-level="4.1" data-path="publicacion.html"><a href="publicacion.html#github"><i class="fa fa-check"></i><b>4.1</b> GitHub Pages</a></li>
+<li class="chapter" data-level="4.2" data-path="publicacion.html"><a href="publicacion.html#licencia"><i class="fa fa-check"></i><b>4.2</b> Licencia</a></li>
+</ul></li>
+<li class="appendix"><span><b>Apéndices</b></span></li>
+<li class="chapter" data-level="A" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>A</b> R Markdown</a><ul>
+<li class="chapter" data-level="A.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introduccion-1"><i class="fa fa-check"></i><b>A.1</b> Introducción</a></li>
+<li class="chapter" data-level="A.2" data-path="rmarkdown.html"><a href="rmarkdown.html#markdown"><i class="fa fa-check"></i><b>A.2</b> Sintaxis de Markdown</a></li>
+<li class="chapter" data-level="A.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>A.3</b> Inclusión de código R</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#graficos"><i class="fa fa-check"></i><b>A.3.1</b> Gráficos</a></li>
+<li class="chapter" data-level="A.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>A.3.2</b> Opciones de bloques de código</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>A.4</b> Tablas</a></li>
+<li class="chapter" data-level="A.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>A.5</b> Cabecera YAML</a></li>
+<li class="chapter" data-level="A.6" data-path="rmarkdown.html"><a href="rmarkdown.html#extraccion-del-codigo-r"><i class="fa fa-check"></i><b>A.6</b> Extracción del código R</a></li>
+<li class="chapter" data-level="A.7" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>A.7</b> Spin</a></li>
+<li class="chapter" data-level="A.8" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>A.8</b> Extensiones RMarkdown de pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="pandoc.html"><a href="pandoc.html"><i class="fa fa-check"></i><b>B</b> Pandoc</a><ul>
+<li class="chapter" data-level="B.1" data-path="pandoc.html"><a href="pandoc.html#introduccion-2"><i class="fa fa-check"></i><b>B.1</b> Introducción</a></li>
+<li class="chapter" data-level="B.2" data-path="pandoc.html"><a href="pandoc.html#conversion"><i class="fa fa-check"></i><b>B.2</b> Conversión de documentos con Pandoc</a></li>
+<li class="chapter" data-level="B.3" data-path="pandoc.html"><a href="pandoc.html#pandoc-y-rmarkdown"><i class="fa fa-check"></i><b>B.3</b> Pandoc y RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Escritura de libros con bookdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rmarkdown" class="section level1">
+<h1><span class="header-section-number">A</span> R Markdown</h1>
+<div id="introduccion-1" class="section level2">
+<h2><span class="header-section-number">A.1</span> Introducción</h2>
+<p>Este documento se ha generado empleando Markdown y R. RMarkdown es recomendable para difundir análisis realizados con R en formato HTML, PDF y DOCX (Word), entre otros.</p>
+<p>Markdown se diseñó inicialmente para la creación de páginas web a partir de documentos de texto de forma sencilla y rápida. Es lo que se conoce como un lenguaje de marcado ligero, tiene unas reglas sintácticas muy simples y se busca principalmente la facilidad de lectura. Posteriormente se fueron añadiendo funcionalidades, por ejemplo para incluir opciones de publicación en muchos otros formatos. La implementación original de Markdown es de <a href="http://daringfireball.net/projects/markdown/">John Gruber</a>, pero actualmente están disponibles múltiples dialectos (sobre todo para publicar en gestores de contenido). RMarkdown utiliza las extensiones de la sintaxis proporcionada por <em>Pandoc</em> (ver Apendice <a href="pandoc.html#pandoc">B</a>), y adicionalmente permite la inclusión de código R.</p>
+<p>Al renderizar un fichero RMarkdown se generará un documento que incluye el código R y los resultados incrustados en el documento<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. En <em>RStudio</em> basta con hacer clic en el botón <em>Knit</em>. En R se puede emplear la funcion <code>render</code> del paquete <code>rmarkdown</code> (por ejemplo <code>render(&quot;Informe.Rmd&quot;)</code>). También se puede abrir directamente el informe generado:</p>
+<pre><code>library(rmarkdown)
+browseURL(url = render(&quot;Informe.Rmd&quot;))</code></pre>
+</div>
+<div id="markdown" class="section level2">
+<h2><span class="header-section-number">A.2</span> Sintaxis de Markdown</h2>
+<p>Como ya se comentó la sintaxis de Markdown es muy secilla. El texto no marcado se renderiza como texto normal aunque es necesario dejar una línea en blanco para insertar un salto de linea. Las principales reglas de Markdown se sumarizan en la siguiente tabla:</p>
+<table>
+<colgroup>
+<col width="32%" />
+<col width="35%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Escribir</th>
+<th>o alternativamente</th>
+<th>para obtener …</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code># Título 1
+ 
+## Título 2
+ 
+### Título 3</code></pre></td>
+<td><pre><code>Título 1
+========
+Título 2
+--------
+### Título 3</code></pre></td>
+<td>Los distintos niveles de encabezados</td>
+</tr>
+<tr class="even">
+<td><pre><code>*Cursiva*</code></pre></td>
+<td><pre><code>_Cursiva_</code></pre></td>
+<td><em>Cursiva</em></td>
+</tr>
+<tr class="odd">
+<td><pre><code>**Negrita**</code></pre></td>
+<td><pre><code>__Negrita__</code></pre></td>
+<td><strong>Negrita</strong></td>
+</tr>
+<tr class="even">
+<td><pre><code>[Enlace](http://url.gz)
+ 
+ </code></pre></td>
+<td><pre><code>[Enlace][1]
+Mas adelante...
+[1]: http://url.gz</code></pre></td>
+<td><a href="http://rmark%20down.rstudio.com">Enlace</a></td>
+</tr>
+<tr class="odd">
+<td><pre><code>![Imagen](rmarkdown.png)
+ 
+ </code></pre></td>
+<td><pre><code>![Imagen][1]
+Mas adelante...
+[1]:http://url/b.jpg</code></pre></td>
+<td><img src="images/rmd.png" title="fig:" alt="Imagen" /></td>
+</tr>
+<tr class="even">
+<td><pre><code>&gt; Blockquote
+&gt;
+&gt; --- El Autor</code></pre></td>
+<td></td>
+<td><blockquote>
+<p>Blockquote</p>
+<p>— El Autor</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><pre><code>* Lista
+* Lista
+   + Sub-lista</code></pre></td>
+<td><pre><code>-  Lista
+-  Lista
+   - Sub-lista</code></pre></td>
+<td><ul>
+<li>Lista</li>
+<li>Lista
+<ul>
+<li>Sub-lista</li>
+</ul></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><pre><code>1. Uno
+2. Dos
+   a. A</code></pre></td>
+<td><pre><code>1) Uno
+2) Dos
+   a) A</code></pre></td>
+<td><ol style="list-style-type: decimal">
+<li>Uno</li>
+<li>Dos
+<ol style="list-style-type: lower-alpha">
+<li>A</li>
+</ol></li>
+</ol></td>
+</tr>
+<tr class="odd">
+<td><pre><code>Regla horizontal
+
+---</code></pre></td>
+<td><pre><code>Regla horizontal
+
+***</code></pre></td>
+<td><p>Regla horizontal</p>
+<hr /></td>
+</tr>
+<tr class="even">
+<td><pre><code>`código en línea` entre
+comillas invertidas</code></pre></td>
+<td></td>
+<td><code>código en línea</code> entre comillas invertidas</td>
+</tr>
+<tr class="odd">
+<td><pre><code>```
+# bloque de código
+3 comillas invertidas
+o sangría de 4 espacios
+```</code></pre></td>
+<td><pre><code>[····]# bloque de código
+[····]3 comillas invertidas
+[····]o sangría de 4 espaci
+os</code></pre></td>
+<td><pre><code># bloque de código
+3 comillas invertidas
+o sangría de 4 espacios</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>Es muy recomendable dejar siempre una linea de separación entre elementos distintos consecutivos.</p>
+<p>A continuación se darán algunos detalles sobre RMarkdown y las extensiones Markdown de Pandoc que admite (notas al pie de página, tablas, citas, ecuaciones LaTeX, …). Para más información (incluyendo introducciones a Markdown y RMarkdown), se recomienda consultar alguna de las numerosas fuentes disponibles, comenzando por la web oficial <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a>.</p>
+<p>También se dispone de información en la ayuda de <em>RStudio</em>:</p>
+<ul>
+<li><p><em>Help &gt; Markdown Quick Reference</em></p></li>
+<li><p><em>Help &gt; Cheatsheets &gt; <a href="https://www.rstudio.org/links/r_markdown_cheat_sheet">R Markdown Cheat Sheet</a></em></p></li>
+<li><p><em>Help &gt; Cheatsheets &gt; <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></em></p></li>
+</ul>
+<p>Otras fuentes permiten obtener documentación más detallada, como por ejemplo:</p>
+<ul>
+<li><p>Web del paquete <code>knitr</code> <span class="citation">(Xie <a href="#ref-R-knitr">2018</a><a href="#ref-R-knitr">b</a>)</span>: <a href="https://yihui.name/knitr" class="uri">https://yihui.name/knitr</a>.</p></li>
+<li><p><span class="citation">Xie, Allaire, and Grolemund (<a href="#ref-xie2018r">2018</a>)</span> : R Markdown: The Definitive Guide, <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p></li>
+<li><p>Extensiones RMarkdown de Pandoc: <a href="https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex">https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex</a>.</p></li>
+</ul>
+</div>
+<div id="codigormd" class="section level2">
+<h2><span class="header-section-number">A.3</span> Inclusión de código R</h2>
+<p>Se puede incluir código R entre los delimitadores <code>```{r}</code> y <code>```</code>. Por defecto, se mostrará el código, se evaluará y se mostrarán los resultados justo a continuación:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(mtcars[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</code></pre></div>
+<pre><code>##                    mpg cyl disp
+## Mazda RX4         21.0   6  160
+## Mazda RX4 Wag     21.0   6  160
+## Datsun 710        22.8   4  108
+## Hornet 4 Drive    21.4   6  258
+## Hornet Sportabout 18.7   8  360
+## Valiant           18.1   6  225</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(mtcars[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</code></pre></div>
+<pre><code>##       mpg             cyl             disp      
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8  
+##  Median :19.20   Median :6.000   Median :196.3  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0</code></pre>
+<p>En <em>RStudio</em> pulsando “Ctrl + Alt + I” o en el icono correspondiente se incluye un trozo de código.</p>
+<p>También se puede incluir código en línea empleando <code>`r código`</code>, por ejemplo <code>`r 2 + 2`</code> produce 4.</p>
+<div id="graficos" class="section level3">
+<h3><span class="header-section-number">A.3.1</span> Gráficos</h3>
+<p>Si el código genera un gráfico, este se incluirá en el documento. <img src="bookdown_intro_files/figure-html/figura1-1.png" width="672" /></p>
+<p>El resultado dependerá del tipo de documento, si se trata de un archivo HTML se mostrará justo después de donde fué generado. Si se genera un documento en LaTeX (a partir del cual se obtienen los documentos PDF), el gráfico podría mostrarse en un entorno flotante</p>
+<p>Por ejemplo la Figura</p>
+</div>
+<div id="opcodigo" class="section level3">
+<h3><span class="header-section-number">A.3.2</span> Opciones de bloques de código</h3>
+<p>Los trozos de código pueden tener nombre y opciones, se establecen en la cabecera de la forma <code>```{r nombre, op1, op2}</code> (en el caso anterior no se muestra el código, al haber empleado <code>```{r, echo=FALSE}</code>). Para un listado de las opciones disponibles ver <a href="http://yihui.name/knitr/options" class="uri">http://yihui.name/knitr/options</a> (en la <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">Sección 2.6</a> del libro de RMarkdown se incluye un resumen). En <em>RStudio</em> se puede pulsar en los iconos en la parte superior derecha del bloque de código para establecer opciones, ejecutar todo el código anterior o sólo el correspondiente trozo.</p>
+<p>Algunas opciones sobre evaluación y resultados:</p>
+<ul>
+<li><code>eval</code>: si <code>=FALSE</code> no se evalúa el código.</li>
+<li><code>echo</code>: si <code>=FALSE</code> no se muestra el código.</li>
+<li><code>include</code>: si <code>=FALSE</code> no se muestra el código ni ningún resultado.</li>
+<li><code>message, warning, error</code>: oculta el correspondiente tipo de mensaje de R (los errores o warnings se mostrarán en la consola).</li>
+<li><code>cache</code>: si se activa, guarda los resultados de la última evaluación y se reutilizan si no cambió el bloque de código (más detalles <a href="https://yihui.name/knitr/options/#cache">aquí</a>). Puede ser de utilidad durante la redacción del documento para reducir el tiempo de renderizado (usándolo con cuidado y desactivándolo al terminar).</li>
+</ul>
+<p>Algunas opciones sobre resultados gráficos:</p>
+<ul>
+<li><code>fig.width, fig.height, fig.dim</code>: dimensiones del dispositivo gráfico de R (no confundir con el tamaño del resultado), e.g. <code>fig.width = 5</code>.</li>
+<li><code>out.width, out.heigh</code>: tamaño del gráfico, e.g. <code>='80%'</code>.</li>
+<li><code>fig.align</code>: <code>='left', 'center', 'right'</code>, establece la alineación.</li>
+<li><code>fig.cap</code>: leyenda de la figura.</li>
+<li><code>dev</code>: dispositivo gráfico de R, por defecto <code>='pdf'</code> para LaTeX y <code>'png'</code> para HTML. Otras opciones son <code>'svg'</code> o <code>'jpeg'</code>.</li>
+</ul>
+<p>Para establecer valores por defecto para todos los bloques de código se suele incluir uno de configuración al principio del documento, por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r, setup, include=FALSE}
+knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7), collapse=TRUE)
+```</code></pre></div>
+</div>
+</div>
+<div id="tablas" class="section level2">
+<h2><span class="header-section-number">A.4</span> Tablas</h2>
+<p>Las tablas en Markdown son de la forma:</p>
+<pre><code>| First Header  | Second Header |
+| ------------- | ------------- |
+| Row1 Cell1    | Row1 Cell2    |
+| Row2 Cell1    | Row2 Cell2    |</code></pre>
+<p>Por ejemplo:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mpg</td>
+<td>Millas / galón (EE.UU.)</td>
+</tr>
+<tr class="even">
+<td>cyl</td>
+<td>Número de cilindros</td>
+</tr>
+<tr class="odd">
+<td>disp</td>
+<td>Desplazamiento (pulgadas cúbicas)</td>
+</tr>
+<tr class="even">
+<td>hp</td>
+<td>Caballos de fuerza bruta</td>
+</tr>
+<tr class="odd">
+<td>drat</td>
+<td>Relación del eje trasero</td>
+</tr>
+<tr class="even">
+<td>wt</td>
+<td>Peso (miles de libras)</td>
+</tr>
+<tr class="odd">
+<td>qsec</td>
+<td>Tiempo de 1/4 de milla</td>
+</tr>
+<tr class="even">
+<td>vs</td>
+<td>Cilindros en V/Straight (0 = cilindros en V, 1 = cilindros en línea)</td>
+</tr>
+<tr class="odd">
+<td>am</td>
+<td>Tipo de transmisión (0 = automático, 1 = manual)</td>
+</tr>
+<tr class="even">
+<td>gear</td>
+<td>Número de marchas (hacia adelante)</td>
+</tr>
+<tr class="odd">
+<td>carb</td>
+<td>Número de carburadores</td>
+</tr>
+</tbody>
+</table>
+<p>Para convertir resultados de R en tablas de una forma simple se puede emplear la función <code>ktable</code> del paquete <em>knitr</em>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(
+  <span class="kw">head</span>(mtcars), 
+  <span class="dt">caption =</span> <span class="st">&quot;Una kable knitr&quot;</span>
+)</code></pre></div>
+<table>
+<caption><span id="tab:kable">Tabla A.1: </span>Una kable knitr</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+<th align="right">wt</th>
+<th align="right">qsec</th>
+<th align="right">vs</th>
+<th align="right">am</th>
+<th align="right">gear</th>
+<th align="right">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.620</td>
+<td align="right">16.46</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td>Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.875</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td>Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+<td align="right">2.320</td>
+<td align="right">18.61</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td>Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+<td align="right">3.215</td>
+<td align="right">19.44</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td>Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+<td align="right">3.440</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td>Valiant</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+<td align="right">3.460</td>
+<td align="right">20.22</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>Otros paquetes proporcionan opciones adicionales: <em>xtable</em>, <em>stargazer</em>, <em>pander</em>, <em>tables</em> y <em>ascii</em>.</p>
+</div>
+<div id="yaml" class="section level2">
+<h2><span class="header-section-number">A.5</span> Cabecera YAML</h2>
+<p>En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YAML (YAML Ain’t Markup Language, <a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>), comenzando y terminando con tres guiones <code>---</code>. Los metadatos de YAML son típicamente opciones de renderizado consitentes en pares de etiquetas y valores separados por dos puntos. Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Creación de contenidos con RMarkdown&quot;</span>
+<span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Fernández-Casal, R. y Cotos-Yáñez, T.R.&quot;</span>
+<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;`r Sys.Date()`&quot;</span>
+<span class="fu">output:</span><span class="at"> html_document</span>
+<span class="ot">---</span></code></pre></div>
+<p>Aunque no siempre es necesario, se recomienda que los valores de texto se introduzcan entre comillas (se puede incluir código R en línea, como por ejemplo <code>`r Sys.Date()`</code> para obtener la fecha actual). Para valores lógicos se puede emplear <code>yes/true</code> y <code>no/false</code> para verdadero y falso, respectivamente.</p>
+<p>Los valores pueden ser vectores, por ejemplo las siguientes opciones son equivalentes:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">bibliography:</span><span class="at"> </span><span class="kw">[</span>book.bib<span class="kw">,</span> packages.bib<span class="kw">]</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">bibliography:</span>
+<span class="kw">-</span> book.bib
+<span class="kw">-</span> packages.bib</code></pre></div>
+<p>También pueden ser listas, añadiendo una sangría de dos espacios (importante):</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">output:</span>
+  <span class="fu">html_document:</span>
+    <span class="fu">toc:</span><span class="at"> yes</span>
+    <span class="fu">toc_float:</span><span class="at"> yes</span>
+  <span class="fu">pdf_document:</span>
+    <span class="fu">toc:</span><span class="at"> yes</span></code></pre></div>
+<p>El campo <code>output</code> permite especificar el formato y las opciones de salida (por defecto se empleará la primera). Empleando este campo también se pueden especificar opciones gráficas para los bloques de código, por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">output:</span>
+  <span class="fu">html_document:</span>
+    <span class="fu">fig_width:</span><span class="at"> 7</span>
+    <span class="fu">fig_height:</span><span class="at"> 6</span>
+    <span class="fu">fig_caption:</span><span class="at"> true</span></code></pre></div>
+<p>La mayoría de los campos YAML son opciones que el paquete <code>rmarkdown</code> le pasa a Pandoc (ver documentación en el Apéndice <a href="pandoc.html#pandoc">B</a>).</p>
+<p>Un ejemplo adicional<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Creación de contenidos con RMarkdown&quot;</span>
+<span class="fu">subtitle:</span><span class="at"> </span><span class="st">&quot;Curso de introducción a R&quot;</span>
+<span class="fu">author:</span>
+<span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Rubén Fernández Casal (ruben.fcasal@udc.es)&quot;</span>
+  <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Universidade da Coruña&quot;</span>
+<span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Tomás R. Cotos Yáñez (tcotos@uvigo.es)&quot;</span>
+  <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Universidade de Vigo&quot;</span>
+<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-23&quot;</span>
+<span class="fu">logo:</span><span class="at"> rmarkdown.png</span>
+<span class="fu">output:</span>
+  <span class="fu">html_document:</span>
+    <span class="fu">toc:</span><span class="at"> yes                  </span><span class="co"># incluir tabla de contenido</span>
+    <span class="fu">toc_float:</span><span class="at"> yes            </span><span class="co"># toc flotante a la izquierda</span>
+    <span class="fu">number_sections:</span><span class="at"> yes      </span><span class="co"># numerar secciones y subsecciones</span>
+    <span class="fu">code_folding:</span><span class="at"> hide        </span><span class="co"># por defecto el código aparecerá oculto</span>
+    <span class="fu">mathjax:</span><span class="at"> local            </span><span class="co"># emplea una copia local de MathJax, hay que establecer:</span>
+    <span class="fu">self_contained:</span><span class="at"> false     </span><span class="co"># las dependencias se guardan en ficheros externos</span>
+    <span class="fu">lib_dir:</span><span class="at"> libs             </span><span class="co"># directorio para librerías (Bootstrap, MathJax, ...)</span>
+  <span class="fu">pdf_document:</span>
+    <span class="fu">toc:</span><span class="at"> yes</span>
+    <span class="fu">toc_depth:</span><span class="at"> 2</span>
+    <span class="fu">keep_tex:</span><span class="at"> yes             </span><span class="co"># conservar fichero latex</span>
+    
+<span class="ot">---</span></code></pre></div>
+<p>Como se puede deducir del ejemplo anterior, en el formato YAML podemos incluir comentarios con el carácter <code>#</code> (por ejemplo para no emplear alguna de las opciones sin borrarla del encabezado).</p>
+<p>En el <a href="https://bookdown.org/yihui/rmarkdown/documents.html">Capítulo 3</a> del libro de RMarkdown se tiene información detallada sobre las opciones de los distintos formatos de salida (sobre ficheros HTML <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">aquí</a> y sobre PDF/LaTeX <a href="https://bookdown.org/yihui/rmarkdown/pdf-document.html">aquí</a>).</p>
+</div>
+<div id="extraccion-del-codigo-r" class="section level2">
+<h2><span class="header-section-number">A.6</span> Extracción del código R</h2>
+<p>Para generar un fichero con el código R se puede emplear la función <code>purl</code> del paquete <em>knitr</em>. Por ejemplo:</p>
+<pre><code>purl(&quot;Informe.Rmd&quot;)</code></pre>
+<p>Si se quiere además el texto RMarkdown como comentarios tipo <code>spin</code>, se puede emplear:</p>
+<pre><code>purl(&quot;Informe.Rmd&quot;, documentation = 2)</code></pre>
+</div>
+<div id="spin" class="section level2">
+<h2><span class="header-section-number">A.7</span> Spin</h2>
+<p>Una forma rápida de crear este tipo de informes a partir de un fichero de código R es emplear la funcion <code>spin</code> del paquete <em>knitr</em> (ver p.e. <a href="http://yihui.name/knitr/demo/stitch" class="uri">http://yihui.name/knitr/demo/stitch</a>).</p>
+<p>Para ello se debe comentar todo lo que no sea código R de una forma especial:</p>
+<ul>
+<li><p>El texto RMarkdown se comenta con <code>#'</code>. Por ejemplo:</p>
+<pre><code>#&#39; # Este es un título de primer nivel
+#&#39; ## Este es un título de segundo nivel</code></pre></li>
+<li><p>Las opciones de un trozo de código se comentan con <code>#+</code>. Por ejemplo:</p>
+<pre><code>#+ setup, include=FALSE
+opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.height=6, fig.width=6)</code></pre></li>
+</ul>
+<p>Para generar el informe se puede emplear la funcion <code>spin</code> del paquete <em>knitr</em>. Por ejemplo: <code>spin(&quot;Ridge_Lasso.R&quot;))</code>. También se podría abrir directamente el informe generado:</p>
+<pre><code>browseURL(url = knitr::spin(&quot;Ridge_Lasso.R&quot;))</code></pre>
+<p>Pero puede ser recomendable renderizarlo con rmarkdown:</p>
+<pre><code>library(rmarkdown)
+browseURL(url = render(knitr::spin(&quot;Ridge_Lasso.R&quot;, knit = FALSE)))</code></pre>
+<p>En <em>RStudio</em> basta con pulsar “Ctrl + Shift + K” o seleccionar <em>File &gt; Knit Document</em> (en las últimas versiones también <em>File &gt; Compile Notebook</em> o hacer clic en el icono correspondiente).</p>
+</div>
+<div id="extensiones-rmarkdown-de-pandoc" class="section level2">
+<h2><span class="header-section-number">A.8</span> Extensiones RMarkdown de pandoc</h2>
+<p>Como ya se comentó, RMarkdown utiliza la sintaxis extendida proporcionada por Pandoc. Por ejemplo, se pueden añadir sub<sub>índices</sub> y super<sup>índices</sup> con <code>sub~índices~</code> y <code>super^índices^</code>,<br />
+y notas al pie con <code>^[texto]</code>.</p>
+<p>Podemos incluir expresiones matemáticas en formato LateX:</p>
+<ul>
+<li><p>En linea escribiendo la expresión latex entre dos símbolos de dolar, por ejemplo <code>$\alpha, \beta, \gamma, \delta$</code> resultaría en <span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span>.</p></li>
+<li><p>En formato ecuación empleando dos pares de símbolos de dolar. Por ejemplo:</p>
+<pre><code>$$\Theta = \begin{pmatrix}\alpha &amp; \beta\\
+\gamma &amp; \delta
+\end{pmatrix}$$</code></pre>
+<p>resultaría en: <span class="math display">\[\Theta = \begin{pmatrix}\alpha &amp; \beta\\
+\gamma &amp; \delta
+\end{pmatrix}\]</span></p></li>
+</ul>
+<p>También admite bibliografía, ver p.e. <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html" class="uri">https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html</a>. Lo más cómodo puede ser emplear un archivo de bibliografía en formato BibTeX, lo que se describe con detalle <a href="https://bookdown.org/yihui/bookdown/citations.html">aquí</a>. Será necesario añadir un campo <code>bibliography</code> en la cabezera YAML, por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">bibliography:</span><span class="at"> bibliografia.bib</span>
+<span class="fu">csl:</span><span class="at"> apa.csl  </span><span class="co"># opcional</span></code></pre></div>
+<p>Suponiendo que en el directorio de trabajo están los ficheros de bibliografía <em>bibliografia.bib</em> y de estilo <em>apa.csl</em> (ver <a href="http://citationstyles.org/" class="uri">http://citationstyles.org/</a>, desde donde se pueden descargar distintos archivos de estilo).</p>
+<p>Las referencias en el texto RMarkdown se incluyen con <code>@referencia</code> o <code>[@referencia]</code>. Pandoc generará el listado de referencias al final del documento, por lo que nos puede interesar insertar una última sección <code># Referencias {-}</code> al generar documentos HTML (en PDF se hará automáticamente al emplear LaTeX). En RStudio se puede instalar el “<a href="https://rstudio.github.io/rstudioaddins/">Addin</a>” <a href="https://github.com/crsh/citr"><code>citr</code></a> para insertar citas a referencias bibliográficas en formato BibTeX.</p>
+<p>Para más detalles de las extensiones de Pandoc ver por ejemplo <a href="https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex">https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex</a> o el manual de Pandoc <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>.</p>
+
+</div>
+</div>
+<h3>Bibliografía</h3>
+<div id="refs" class="references">
+<div id="ref-R-knitr">
+<p>Xie, Yihui. 2018b. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+<div id="ref-xie2018r">
+<p>Xie, Yihui, JJ Allaire, and Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. CRC Press. <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>Se llama al paquete <code>knitr</code> para “tejer” el código de R y los resultados en un fichero Markdown, que posteriormente es procesado con <em>pandoc</em><a href="rmarkdown.html#fnref8">↩</a></p></li>
+<li id="fn9"><p>Puede ser interesante ejecutar <code>str(rmarkdown::html_document())</code> para ver un listado de todas las opciones disponibles de <code>html_document</code><a href="rmarkdown.html#fnref9">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="publicacion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pandoc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rubenfcasal/bookdown_intro/edit/master/10-rmarkdown.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown_intro.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
