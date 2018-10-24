@@ -125,10 +125,22 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-23}
+    \date{2018-10-24}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{spanish}
+
+  % Tabla en lugar de cuadro
+  \gappto\captionsspanish{\renewcommand{\tablename}{Tabla}  
+          \renewcommand{\listtablename}{Índice de tablas}}
+
+\else
+  \usepackage[spanish,es-tabla]{babel}
+  % Para los acentos (xelatex no lo necesita)
+\fi
 \makeatletter
 \def\thm@space@setup{%
   \thm@preskip=8pt plus 2pt minus 4pt
@@ -357,7 +369,7 @@ utilizar para configurar distintas opciones:
 \OtherTok{--- }
 \FunctionTok{title:}\AttributeTok{ }\StringTok{"A Minimal Book Example"}
 \FunctionTok{author:}\AttributeTok{ }\StringTok{"Yihui Xie"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-23"}
+\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-24"}
 \FunctionTok{site:}\AttributeTok{ bookdown::bookdown_site}
 \FunctionTok{output:}\AttributeTok{ bookdown::gitbook}
 \FunctionTok{documentclass:}\AttributeTok{ book}
@@ -510,6 +522,22 @@ instrucciones de la
 
 y puede ser descargado
 \href{https://github.com/rubenfcasal/bookdown_intro/raw/master/_bookdown.yml}{aquí}.
+Además se modificó \emph{preamble.tex} para configurar LaTeX para
+castellano, añadiendo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\textbackslash{}ifxetex}
+  \BuiltInTok{\textbackslash{}usepackage}\NormalTok{\{}\ExtensionTok{polyglossia}\NormalTok{\}}
+  \FunctionTok{\textbackslash{}setmainlanguage}\NormalTok{\{spanish\}}
+  \CommentTok{% Tabla en lugar de cuadro}
+  \FunctionTok{\textbackslash{}gappto\textbackslash{}captionsspanish}\NormalTok{\{}\FunctionTok{\textbackslash{}renewcommand}\NormalTok{\{}\ExtensionTok{\textbackslash{}tablename}\NormalTok{\}\{Tabla\}  }
+          \FunctionTok{\textbackslash{}renewcommand}\NormalTok{\{}\ExtensionTok{\textbackslash{}listtablename}\NormalTok{\}\{Índice de tablas\}\}}
+\FunctionTok{\textbackslash{}else}
+  \BuiltInTok{\textbackslash{}usepackage}\NormalTok{[spanish,es-tabla]\{}\ExtensionTok{babel}\NormalTok{\}}
+\FunctionTok{\textbackslash{}fi}
+\end{Highlighting}
+\end{Shaded}
 
 Otras opciones permitirían cambiar el orden de los ficheros \emph{.Rmd}
 (\texttt{rmd\_files:}) , o establecer y configurar la sesión de R donde
@@ -911,6 +939,43 @@ library(rmarkdown)
 browseURL(url = render("Informe.Rmd"))
 \end{verbatim}
 
+A continuación se darán algunos detalles sobre RMarkdown (y las
+extensiones Markdown de Pandoc que admite: notas al pie de página,
+tablas, citas, ecuaciones LaTeX, \ldots{}). Para más información
+(incluyendo introducciones a Markdown y RMarkdown), se recomienda
+consultar alguna de las numerosas fuentes disponibles, comenzando por la
+web oficial \url{http://rmarkdown.rstudio.com/}.
+
+También se dispone de información en la ayuda de \emph{RStudio}:
+
+\begin{itemize}
+\item
+  \emph{Help \textgreater{} Markdown Quick Reference}
+\item
+  \emph{Help \textgreater{} Cheatsheets \textgreater{}
+  \href{https://www.rstudio.org/links/r_markdown_cheat_sheet}{R Markdown
+  Cheat Sheet}}
+\item
+  \emph{Help \textgreater{} Cheatsheets \textgreater{}
+  \href{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}{R
+  Markdown Reference Guide}}
+\end{itemize}
+
+Otras fuentes permiten obtener documentación más detallada, como por
+ejemplo:
+
+\begin{itemize}
+\item
+  Web del paquete \texttt{knitr} \citep{R-knitr}:
+  \url{https://yihui.name/knitr}.
+\item
+  \citet{xie2018r} : R Markdown: The Definitive Guide,
+  \url{https://bookdown.org/yihui/rmarkdown/}.
+\item
+  Extensiones RMarkdown de Pandoc:
+  \url{https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html\%23raw-tex}.
+\end{itemize}
+
 \section{Sintaxis de Markdown}\label{markdown}
 
 Como ya se comentó la sintaxis de Markdown es muy secilla. El texto no
@@ -1147,50 +1212,24 @@ o sangría de 4 espacios
 Es muy recomendable dejar siempre una linea de separación entre
 elementos distintos consecutivos.
 
-A continuación se darán algunos detalles sobre RMarkdown y las
-extensiones Markdown de Pandoc que admite (notas al pie de página,
-tablas, citas, ecuaciones LaTeX, \ldots{}). Para más información
-(incluyendo introducciones a Markdown y RMarkdown), se recomienda
-consultar alguna de las numerosas fuentes disponibles, comenzando por la
-web oficial \url{http://rmarkdown.rstudio.com/}.
-
-También se dispone de información en la ayuda de \emph{RStudio}:
-
-\begin{itemize}
-\item
-  \emph{Help \textgreater{} Markdown Quick Reference}
-\item
-  \emph{Help \textgreater{} Cheatsheets \textgreater{}
-  \href{https://www.rstudio.org/links/r_markdown_cheat_sheet}{R Markdown
-  Cheat Sheet}}
-\item
-  \emph{Help \textgreater{} Cheatsheets \textgreater{}
-  \href{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}{R
-  Markdown Reference Guide}}
-\end{itemize}
-
-Otras fuentes permiten obtener documentación más detallada, como por
-ejemplo:
-
-\begin{itemize}
-\item
-  Web del paquete \texttt{knitr} \citep{R-knitr}:
-  \url{https://yihui.name/knitr}.
-\item
-  \citet{xie2018r} : R Markdown: The Definitive Guide,
-  \url{https://bookdown.org/yihui/rmarkdown/}.
-\item
-  Extensiones RMarkdown de Pandoc:
-  \url{https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html\%23raw-tex}.
-\end{itemize}
-
 \section{Inclusión de código R}\label{codigormd}
 
 Se puede incluir código R entre los delimitadores
 \texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}} y
 \texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}}. Por
 defecto, se mostrará el código, se evaluará y se mostrarán los
-resultados justo a continuación:
+resultados justo a continuación. Por ejemplo el siguiente código:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{```\{r\}}
+\NormalTok{head(mtcars[1:3])}
+\NormalTok{summary(mtcars[1:3])}
+\NormalTok{```}
+\end{Highlighting}
+\end{Shaded}
+
+produce:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1233,23 +1272,30 @@ También se puede incluir código en línea empleando
 
 \subsection{Gráficos}\label{graficos}
 
-Si el código genera un gráfico, este se incluirá en el documento.
+Si el código genera un gráfico, este se incluirá en el documento justo
+después de donde fué generado (por defecto). Por ejemplo el siguiente
+gráfico:
+
 \includegraphics{bookdown_intro_files/figure-latex/figura1-1.pdf}
 
-El resultado dependerá del tipo de documento, si se trata de un archivo
-HTML se mostrará justo después de donde fué generado. Si se genera un
-documento en LaTeX (a partir del cual se obtienen los documentos PDF),
-el gráfico podría mostrarse en un entorno flotante
+se generó empleando:
 
-Por ejemplo la Figura
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{```\{r figura1, echo=FALSE\}}
+\NormalTok{hist(mtcars$mpg)}
+\NormalTok{```}
+\end{Highlighting}
+\end{Shaded}
+
+aunque no se mostró previamente el código al haber establecido la opción
+\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r,\ echo=FALSE\}}.
 
 \subsection{Opciones de bloques de código}\label{opcodigo}
 
 Los trozos de código pueden tener nombre y opciones, se establecen en la
 cabecera de la forma
-\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\ nombre,\ op1,\ op2\}}
-(en el caso anterior no se muestra el código, al haber empleado
-\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r,\ echo=FALSE\}}).
+\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\ nombre,\ op1,\ op2\}}.
 Para un listado de las opciones disponibles ver
 \url{http://yihui.name/knitr/options} (en la
 \href{https://bookdown.org/yihui/rmarkdown/r-code.html}{Sección 2.6} del
@@ -1297,7 +1343,11 @@ Algunas opciones sobre resultados gráficos:
   \texttt{=\textquotesingle{}left\textquotesingle{},\ \textquotesingle{}center\textquotesingle{},\ \textquotesingle{}right\textquotesingle{}},
   establece la alineación.
 \item
-  \texttt{fig.cap}: leyenda de la figura.
+  \texttt{fig.cap}: leyenda de la figura\footnote{Si se genera un
+    documento en PDF/LaTeX el gráfico se mostrará en un entorno flotante
+    y se puede ajustar la posición empleando la opción \texttt{fig.pos}
+    (por ejemplo,
+    \texttt{fig.pos\ =\ \textquotesingle{}!htb\textquotesingle{}}).}.
 \item
   \texttt{dev}: dispositivo gráfico de R, por defecto
   \texttt{=\textquotesingle{}pdf\textquotesingle{}} para LaTeX y
@@ -1352,7 +1402,8 @@ carb & Número de carburadores\tabularnewline
 \end{longtable}
 
 Para convertir resultados de R en tablas de una forma simple se puede
-emplear la función \texttt{ktable} del paquete \emph{knitr}:
+emplear la función \texttt{ktable} del paquete \emph{knitr}. Por ejemplo
+la Tabla \ref{tab:kable} se obtuvo mediante el siguiente código:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1396,7 +1447,9 @@ formato YAML (YAML Ain't Markup Language,
 \url{https://en.wikipedia.org/wiki/YAML}), comenzando y terminando con
 tres guiones \texttt{-\/-\/-}. Los metadatos de YAML son típicamente
 opciones de renderizado consitentes en pares de etiquetas y valores
-separados por dos puntos. Por ejemplo:
+separados por dos puntos\footnote{La mayoría de los campos YAML son
+  opciones que el paquete \texttt{rmarkdown} le pasa a Pandoc (ver
+  \url{https://pandoc.org/MANUAL.html}).}. Por ejemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1480,7 +1533,7 @@ Un ejemplo adicional\footnote{Puede ser interesante ejecutar
   \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade da Coruña"}
 \KeywordTok{-} \FunctionTok{name:}\AttributeTok{ }\StringTok{"Tomás R. Cotos Yáñez (tcotos@uvigo.es)"}
   \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade de Vigo"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-23"}
+\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-24"}
 \FunctionTok{logo:}\AttributeTok{ rmarkdown.png}
 \FunctionTok{output:}
   \FunctionTok{html_document:}
@@ -1705,19 +1758,22 @@ formatos a Markdown, por ejemplo:
   Un fichero word a markdown
 
 \begin{verbatim}
-"C:\Program Files\RStudio\bin\pandoc\pandoc" fichero.docx -f docx -t markdown --extract-media . -o fichero.Rmd 
+"C:\Program Files\RStudio\bin\pandoc\pandoc" fichero.docx -f docx -t markdown 
+--extract-media . -o fichero.Rmd 
 \end{verbatim}
 \item
   Un fichero LaTeX a markdown
 
 \begin{verbatim}
-"C:\Program Files\RStudio\bin\pandoc\pandoc" fichero.tex -f latex -t markdown -o fichero.Rmd 
+"C:\Program Files\RStudio\bin\pandoc\pandoc" fichero.tex -f latex -t markdown 
+-o fichero.Rmd 
 \end{verbatim}
 \item
   Una web a markdown
 
 \begin{verbatim}
-"C:\Program Files\RStudio\bin\pandoc\pandoc" http://url.org -f html -t markdown -o fichero.Rmd
+"C:\Program Files\RStudio\bin\pandoc\pandoc" http://url.org -f html -t markdown 
+-o fichero.Rmd
 \end{verbatim}
 \end{itemize}
 
@@ -1738,7 +1794,15 @@ llamada se muestra en la consola (o en la correspondiente pestaña de
 RStudio):
 
 \begin{verbatim}
-"C:/Program Files/RStudio/bin/pandoc/pandoc" +RTS -K512m -RTS Informes.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output Informes.html --smart --email-obfuscation none --self-contained --standalone --section-divs --table-of-contents --toc-depth 3 --variable toc_float=1 --variable toc_selectors=h1,h2,h3 --variable toc_collapsed=1 --variable toc_smooth_scroll=1 --variable toc_print=1 --template "C:\PROGRA~1\R\R-35~1.1\library\RMARKD~1\rmd\h\DEFAUL~1.HTM" --no-highlight --variable highlightjs=1 --variable "theme:bootstrap" --include-in-header "C:\Users\RUBEN~1.FCA\AppData\Local\Temp\RtmpkntXD8\rmarkdown-str2084caf51da.html" --mathjax --variable "mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+"C:/Program Files/RStudio/bin/pandoc/pandoc" +RTS -K512m -RTS Informes.utf8.md --to html4 
+--from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash 
+--output Informes.html --smart --email-obfuscation none --self-contained --standalone 
+--section-divs --table-of-contents --toc-depth 3 --variable toc_float=1 
+--variable toc_selectors=h1,h2,h3 --variable toc_collapsed=1 --variable toc_smooth_scroll=1 
+--variable toc_print=1 --template "C:\PROGRA~1\R\R-35~1.1\library\RMARKD~1\rmd\h\DEFAUL~1.HTM"
+--no-highlight --variable highlightjs=1 --variable "theme:bootstrap" --include-in-header
+"C:\Users\RUBEN~1.FCA\AppData\Local\Temp\RtmpkntXD8\rmarkdown-str2084caf51da.html" --mathjax 
+--variable "mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 Output created: Informes.html
 \end{verbatim}

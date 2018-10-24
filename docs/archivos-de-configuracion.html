@@ -25,7 +25,7 @@
 <meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
 
 
-<meta name="date" content="2018-10-23">
+<meta name="date" content="2018-10-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -174,7 +174,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">--- </span>
 <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;A Minimal Book Example&quot;</span>
 <span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span>
-<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-23&quot;</span>
+<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-24&quot;</span>
 <span class="fu">site:</span><span class="at"> bookdown::bookdown_site</span>
 <span class="fu">output:</span><span class="at"> bookdown::gitbook</span>
 <span class="fu">documentclass:</span><span class="at"> book</span>
@@ -262,7 +262,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="fu">ui:</span>
     <span class="fu">chapter_name:</span><span class="at"> </span><span class="st">&#39;Capítulo &#39;</span>
 <span class="fu">delete_merged_file:</span><span class="at"> yes</span></code></pre></div>
-<p>y puede ser descargado <a href="https://github.com/rubenfcasal/bookdown_intro/raw/master/_bookdown.yml">aquí</a>.</p>
+<p>y puede ser descargado <a href="https://github.com/rubenfcasal/bookdown_intro/raw/master/_bookdown.yml">aquí</a>. Además se modificó <em>preamble.tex</em> para configurar LaTeX para castellano, añadiendo:</p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex"><span class="fu">\ifxetex</span>
+  <span class="bu">\usepackage</span>{<span class="ex">polyglossia</span>}
+  <span class="fu">\setmainlanguage</span>{spanish}
+  <span class="co">% Tabla en lugar de cuadro</span>
+  <span class="fu">\gappto\captionsspanish</span>{<span class="fu">\renewcommand</span>{<span class="ex">\tablename</span>}{Tabla}  
+          <span class="fu">\renewcommand</span>{<span class="ex">\listtablename</span>}{Índice de tablas}}
+<span class="fu">\else</span>
+  <span class="bu">\usepackage</span>[spanish,es-tabla]{<span class="ex">babel</span>}
+<span class="fu">\fi</span></code></pre></div>
 <p>Otras opciones permitirían cambiar el orden de los ficheros <em>.Rmd</em> (<code>rmd_files:</code>) , o establecer y configurar la sesión de R donde se evalúa el código. Por ejemplo:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">new_session:</span><span class="at"> yes                                    </span><span class="co"># Cada capítulo en una nueva sesión</span>
 <span class="fu">before_chapter_script:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;script1.R&quot;</span><span class="kw">,</span> <span class="st">&quot;script2.R&quot;</span><span class="kw">]</span><span class="at">   </span><span class="co"># Ejecutar código antes de los capítulos</span>

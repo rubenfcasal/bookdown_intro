@@ -138,6 +138,18 @@ language:
 delete_merged_file: yes
 ```
 y puede ser descargado [aquí](https://github.com/rubenfcasal/bookdown_intro/raw/master/_bookdown.yml).
+Además se modificó *preamble.tex* para configurar LaTeX para castellano, añadiendo:
+```latex
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{spanish}
+  % Tabla en lugar de cuadro
+  \gappto\captionsspanish{\renewcommand{\tablename}{Tabla}  
+          \renewcommand{\listtablename}{Índice de tablas}}
+\else
+  \usepackage[spanish,es-tabla]{babel}
+\fi
+```
 
 Otras opciones permitirían cambiar el orden de los ficheros *.Rmd* (`rmd_files:`) ,
 o establecer y configurar la sesión de R donde se evalúa el código. 
