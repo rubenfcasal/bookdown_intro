@@ -25,7 +25,7 @@
 <meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
 
 
-<meta name="date" content="2018-10-23">
+<meta name="date" content="2018-10-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -174,6 +174,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Al renderizar un fichero RMarkdown se generará un documento que incluye el código R y los resultados incrustados en el documento<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. En <em>RStudio</em> basta con hacer clic en el botón <em>Knit</em>. En R se puede emplear la funcion <code>render</code> del paquete <code>rmarkdown</code> (por ejemplo <code>render(&quot;Informe.Rmd&quot;)</code>). También se puede abrir directamente el informe generado:</p>
 <pre><code>library(rmarkdown)
 browseURL(url = render(&quot;Informe.Rmd&quot;))</code></pre>
+<p>A continuación se darán algunos detalles sobre RMarkdown (y las extensiones Markdown de Pandoc que admite: notas al pie de página, tablas, citas, ecuaciones LaTeX, …). Para más información (incluyendo introducciones a Markdown y RMarkdown), se recomienda consultar alguna de las numerosas fuentes disponibles, comenzando por la web oficial <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a>.</p>
+<p>También se dispone de información en la ayuda de <em>RStudio</em>:</p>
+<ul>
+<li><p><em>Help &gt; Markdown Quick Reference</em></p></li>
+<li><p><em>Help &gt; Cheatsheets &gt; <a href="https://www.rstudio.org/links/r_markdown_cheat_sheet">R Markdown Cheat Sheet</a></em></p></li>
+<li><p><em>Help &gt; Cheatsheets &gt; <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></em></p></li>
+</ul>
+<p>Otras fuentes permiten obtener documentación más detallada, como por ejemplo:</p>
+<ul>
+<li><p>Web del paquete <code>knitr</code> <span class="citation">(Xie <a href="#ref-R-knitr">2018</a><a href="#ref-R-knitr">b</a>)</span>: <a href="https://yihui.name/knitr" class="uri">https://yihui.name/knitr</a>.</p></li>
+<li><p><span class="citation">Xie, Allaire, and Grolemund (<a href="#ref-xie2018r">2018</a>)</span> : R Markdown: The Definitive Guide, <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p></li>
+<li><p>Extensiones RMarkdown de Pandoc: <a href="https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex">https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex</a>.</p></li>
+</ul>
 </div>
 <div id="markdown" class="section level2">
 <h2><span class="header-section-number">A.2</span> Sintaxis de Markdown</h2>
@@ -306,23 +319,15 @@ o sangría de 4 espacios</code></pre></td>
 </tbody>
 </table>
 <p>Es muy recomendable dejar siempre una linea de separación entre elementos distintos consecutivos.</p>
-<p>A continuación se darán algunos detalles sobre RMarkdown y las extensiones Markdown de Pandoc que admite (notas al pie de página, tablas, citas, ecuaciones LaTeX, …). Para más información (incluyendo introducciones a Markdown y RMarkdown), se recomienda consultar alguna de las numerosas fuentes disponibles, comenzando por la web oficial <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a>.</p>
-<p>También se dispone de información en la ayuda de <em>RStudio</em>:</p>
-<ul>
-<li><p><em>Help &gt; Markdown Quick Reference</em></p></li>
-<li><p><em>Help &gt; Cheatsheets &gt; <a href="https://www.rstudio.org/links/r_markdown_cheat_sheet">R Markdown Cheat Sheet</a></em></p></li>
-<li><p><em>Help &gt; Cheatsheets &gt; <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></em></p></li>
-</ul>
-<p>Otras fuentes permiten obtener documentación más detallada, como por ejemplo:</p>
-<ul>
-<li><p>Web del paquete <code>knitr</code> <span class="citation">(Xie <a href="#ref-R-knitr">2018</a><a href="#ref-R-knitr">b</a>)</span>: <a href="https://yihui.name/knitr" class="uri">https://yihui.name/knitr</a>.</p></li>
-<li><p><span class="citation">Xie, Allaire, and Grolemund (<a href="#ref-xie2018r">2018</a>)</span> : R Markdown: The Definitive Guide, <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p></li>
-<li><p>Extensiones RMarkdown de Pandoc: <a href="https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex">https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex</a>.</p></li>
-</ul>
 </div>
 <div id="codigormd" class="section level2">
 <h2><span class="header-section-number">A.3</span> Inclusión de código R</h2>
-<p>Se puede incluir código R entre los delimitadores <code>```{r}</code> y <code>```</code>. Por defecto, se mostrará el código, se evaluará y se mostrarán los resultados justo a continuación:</p>
+<p>Se puede incluir código R entre los delimitadores <code>```{r}</code> y <code>```</code>. Por defecto, se mostrará el código, se evaluará y se mostrarán los resultados justo a continuación. Por ejemplo el siguiente código:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r}
+head(mtcars[1:3])
+summary(mtcars[1:3])
+```</code></pre></div>
+<p>produce:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(mtcars[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</code></pre></div>
 <pre><code>##                    mpg cyl disp
 ## Mazda RX4         21.0   6  160
@@ -343,13 +348,17 @@ o sangría de 4 espacios</code></pre></td>
 <p>También se puede incluir código en línea empleando <code>`r código`</code>, por ejemplo <code>`r 2 + 2`</code> produce 4.</p>
 <div id="graficos" class="section level3">
 <h3><span class="header-section-number">A.3.1</span> Gráficos</h3>
-<p>Si el código genera un gráfico, este se incluirá en el documento. <img src="bookdown_intro_files/figure-html/figura1-1.png" width="672" /></p>
-<p>El resultado dependerá del tipo de documento, si se trata de un archivo HTML se mostrará justo después de donde fué generado. Si se genera un documento en LaTeX (a partir del cual se obtienen los documentos PDF), el gráfico podría mostrarse en un entorno flotante</p>
-<p>Por ejemplo la Figura</p>
+<p>Si el código genera un gráfico, este se incluirá en el documento justo después de donde fué generado (por defecto). Por ejemplo el siguiente gráfico:</p>
+<p><img src="bookdown_intro_files/figure-html/figura1-1.png" width="672" /></p>
+<p>se generó empleando:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">```{r figura1, echo=FALSE}
+hist(mtcars$mpg)
+```</code></pre></div>
+<p>aunque no se mostró previamente el código al haber establecido la opción <code>```{r, echo=FALSE}</code>.</p>
 </div>
 <div id="opcodigo" class="section level3">
 <h3><span class="header-section-number">A.3.2</span> Opciones de bloques de código</h3>
-<p>Los trozos de código pueden tener nombre y opciones, se establecen en la cabecera de la forma <code>```{r nombre, op1, op2}</code> (en el caso anterior no se muestra el código, al haber empleado <code>```{r, echo=FALSE}</code>). Para un listado de las opciones disponibles ver <a href="http://yihui.name/knitr/options" class="uri">http://yihui.name/knitr/options</a> (en la <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">Sección 2.6</a> del libro de RMarkdown se incluye un resumen). En <em>RStudio</em> se puede pulsar en los iconos en la parte superior derecha del bloque de código para establecer opciones, ejecutar todo el código anterior o sólo el correspondiente trozo.</p>
+<p>Los trozos de código pueden tener nombre y opciones, se establecen en la cabecera de la forma <code>```{r nombre, op1, op2}</code>. Para un listado de las opciones disponibles ver <a href="http://yihui.name/knitr/options" class="uri">http://yihui.name/knitr/options</a> (en la <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">Sección 2.6</a> del libro de RMarkdown se incluye un resumen). En <em>RStudio</em> se puede pulsar en los iconos en la parte superior derecha del bloque de código para establecer opciones, ejecutar todo el código anterior o sólo el correspondiente trozo.</p>
 <p>Algunas opciones sobre evaluación y resultados:</p>
 <ul>
 <li><code>eval</code>: si <code>=FALSE</code> no se evalúa el código.</li>
@@ -363,7 +372,7 @@ o sangría de 4 espacios</code></pre></td>
 <li><code>fig.width, fig.height, fig.dim</code>: dimensiones del dispositivo gráfico de R (no confundir con el tamaño del resultado), e.g. <code>fig.width = 5</code>.</li>
 <li><code>out.width, out.heigh</code>: tamaño del gráfico, e.g. <code>='80%'</code>.</li>
 <li><code>fig.align</code>: <code>='left', 'center', 'right'</code>, establece la alineación.</li>
-<li><code>fig.cap</code>: leyenda de la figura.</li>
+<li><code>fig.cap</code>: leyenda de la figura<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</li>
 <li><code>dev</code>: dispositivo gráfico de R, por defecto <code>='pdf'</code> para LaTeX y <code>'png'</code> para HTML. Otras opciones son <code>'svg'</code> o <code>'jpeg'</code>.</li>
 </ul>
 <p>Para establecer valores por defecto para todos los bloques de código se suele incluir uno de configuración al principio del documento, por ejemplo:</p>
@@ -434,7 +443,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
 </tr>
 </tbody>
 </table>
-<p>Para convertir resultados de R en tablas de una forma simple se puede emplear la función <code>ktable</code> del paquete <em>knitr</em>:</p>
+<p>Para convertir resultados de R en tablas de una forma simple se puede emplear la función <code>ktable</code> del paquete <em>knitr</em>. Por ejemplo la Tabla <a href="rmarkdown.html#tab:kable">A.1</a> se obtuvo mediante el siguiente código:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(
   <span class="kw">head</span>(mtcars), 
   <span class="dt">caption =</span> <span class="st">&quot;Una kable knitr&quot;</span>
@@ -548,7 +557,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
 </div>
 <div id="yaml" class="section level2">
 <h2><span class="header-section-number">A.5</span> Cabecera YAML</h2>
-<p>En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YAML (YAML Ain’t Markup Language, <a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>), comenzando y terminando con tres guiones <code>---</code>. Los metadatos de YAML son típicamente opciones de renderizado consitentes en pares de etiquetas y valores separados por dos puntos. Por ejemplo:</p>
+<p>En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YAML (YAML Ain’t Markup Language, <a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>), comenzando y terminando con tres guiones <code>---</code>. Los metadatos de YAML son típicamente opciones de renderizado consitentes en pares de etiquetas y valores separados por dos puntos<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>. Por ejemplo:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Creación de contenidos con RMarkdown&quot;</span>
 <span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Fernández-Casal, R. y Cotos-Yáñez, T.R.&quot;</span>
@@ -575,7 +584,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
     <span class="fu">fig_height:</span><span class="at"> 6</span>
     <span class="fu">fig_caption:</span><span class="at"> true</span></code></pre></div>
 <p>La mayoría de los campos YAML son opciones que el paquete <code>rmarkdown</code> le pasa a Pandoc (ver documentación en el Apéndice <a href="pandoc.html#pandoc">B</a>).</p>
-<p>Un ejemplo adicional<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>:</p>
+<p>Un ejemplo adicional<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Creación de contenidos con RMarkdown&quot;</span>
 <span class="fu">subtitle:</span><span class="at"> </span><span class="st">&quot;Curso de introducción a R&quot;</span>
@@ -584,7 +593,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
   <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Universidade da Coruña&quot;</span>
 <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Tomás R. Cotos Yáñez (tcotos@uvigo.es)&quot;</span>
   <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Universidade de Vigo&quot;</span>
-<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-23&quot;</span>
+<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-24&quot;</span>
 <span class="fu">logo:</span><span class="at"> rmarkdown.png</span>
 <span class="fu">output:</span>
   <span class="fu">html_document:</span>
@@ -667,7 +676,9 @@ y notas al pie con <code>^[texto]</code>.</p>
 <hr />
 <ol start="8">
 <li id="fn8"><p>Se llama al paquete <code>knitr</code> para “tejer” el código de R y los resultados en un fichero Markdown, que posteriormente es procesado con <em>pandoc</em><a href="rmarkdown.html#fnref8">↩</a></p></li>
-<li id="fn9"><p>Puede ser interesante ejecutar <code>str(rmarkdown::html_document())</code> para ver un listado de todas las opciones disponibles de <code>html_document</code><a href="rmarkdown.html#fnref9">↩</a></p></li>
+<li id="fn9"><p>Si se genera un documento en PDF/LaTeX el gráfico se mostrará en un entorno flotante y se puede ajustar la posición empleando la opción <code>fig.pos</code> (por ejemplo, <code>fig.pos = '!htb'</code>).<a href="rmarkdown.html#fnref9">↩</a></p></li>
+<li id="fn10"><p>La mayoría de los campos YAML son opciones que el paquete <code>rmarkdown</code> le pasa a Pandoc (ver <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>).<a href="rmarkdown.html#fnref10">↩</a></p></li>
+<li id="fn11"><p>Puede ser interesante ejecutar <code>str(rmarkdown::html_document())</code> para ver un listado de todas las opciones disponibles de <code>html_document</code><a href="rmarkdown.html#fnref11">↩</a></p></li>
 </ol>
 </div>
             </section>

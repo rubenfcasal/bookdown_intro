@@ -25,7 +25,8 @@ Es lo que se conoce como un lenguaje de marcado ligero, tiene unas reglas sintá
 y se busca principalmente la facilidad de lectura.
 Posteriormente se fueron añadiendo funcionalidades, 
 por ejemplo para incluir opciones de publicación en muchos otros formatos.
-La implementación original de Markdown es de [John Gruber](http://daringfireball.net/projects/markdown/), 
+La implementación original de Markdown es de 
+[John Gruber](http://daringfireball.net/projects/markdown/), 
 pero actualmente están disponibles múltiples dialectos 
 (sobre todo para publicar en gestores de contenido).
 RMarkdown utiliza las extensiones de la sintaxis proporcionada por *Pandoc* (ver Apendice \@ref(pandoc)),
@@ -42,6 +43,31 @@ También se puede abrir directamente el informe generado:
 library(rmarkdown)
 browseURL(url = render("Informe.Rmd"))
 ```
+
+A continuación se darán algunos detalles sobre RMarkdown (y las extensiones Markdown de Pandoc 
+que admite: notas al pie de página, tablas, citas, ecuaciones LaTeX, ...).
+Para más información (incluyendo introducciones a Markdown y RMarkdown),
+se recomienda consultar alguna de las numerosas fuentes disponibles, 
+comenzando por la web oficial  <http://rmarkdown.rstudio.com/>.
+
+También se dispone de información en la ayuda de *RStudio*:
+
+-   *Help > Markdown Quick Reference*
+
+-   *Help > Cheatsheets > [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet)*
+
+-   *Help > Cheatsheets > [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)*
+
+
+Otras fuentes permiten obtener documentación más detallada, como por ejemplo:
+
+- Web del paquete `knitr` [@R-knitr]: <https://yihui.name/knitr>.
+
+- @xie2018r : R Markdown: The Definitive Guide, 
+  <https://bookdown.org/yihui/rmarkdown/>.
+
+- Extensiones RMarkdown de Pandoc: <https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex>.
+
 
 ## Sintaxis de Markdown {#markdown}
 
@@ -120,33 +146,20 @@ insertar un salto de linea. Las principales reglas de Markdown se sumarizan en l
 
 Es muy recomendable dejar siempre una linea de separación entre elementos distintos consecutivos.
 
-A continuación se darán algunos detalles sobre RMarkdown y las extensiones Markdown de Pandoc 
-que admite (notas al pie de página, tablas, citas, ecuaciones LaTeX, ...).
-Para más información (incluyendo introducciones a Markdown y RMarkdown),
-se recomienda consultar alguna de las numerosas fuentes disponibles, 
-comenzando por la web oficial  <http://rmarkdown.rstudio.com/>.
 
-También se dispone de información en la ayuda de *RStudio*:
-
--   *Help > Markdown Quick Reference*
-
--   *Help > Cheatsheets > [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet)*
-
--   *Help > Cheatsheets > [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)*
-
-
-Otras fuentes permiten obtener documentación más detallada, como por ejemplo:
-
-- Web del paquete `knitr` [@R-knitr]: <https://yihui.name/knitr>.
-
-- @xie2018r : R Markdown: The Definitive Guide, 
-  <https://bookdown.org/yihui/rmarkdown/>.
-
-- Extensiones RMarkdown de Pandoc: <https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex>.
 
 ## Inclusión de código R {#codigormd}
 
-Se puede incluir código R entre los delimitadores ` ```{r} ` y ` ``` `. Por defecto, se mostrará el código, se evaluará y se mostrarán los resultados justo a continuación:
+Se puede incluir código R entre los delimitadores ` ```{r} ` y ` ``` `. 
+Por defecto, se mostrará el código, se evaluará y se mostrarán los resultados justo a continuación.
+Por ejemplo el siguiente código:
+````markdown
+````r '{r}'`
+head(mtcars[1:3])
+summary(mtcars[1:3])
+```
+````
+produce:
 ```{r}
 head(mtcars[1:3])
 summary(mtcars[1:3])
@@ -160,23 +173,26 @@ por ejemplo `r inline("2 + 2")` produce `r 2 + 2`.
 
 ### Gráficos
 
-Si el código genera un gráfico, este se incluirá en el documento. 
+Si el código genera un gráfico, este se incluirá en el documento justo después de donde fué generado 
+(por defecto). Por ejemplo el siguiente gráfico:
+
 ```{r figura1, echo=FALSE}
 hist(mtcars$mpg)
 ```
 
-El resultado dependerá del tipo de documento, si se trata de un archivo HTML se mostrará justo después de donde fué generado. 
-Si se genera un documento en LaTeX (a partir del cual se obtienen los documentos PDF), 
-el gráfico podría mostrarse en un entorno flotante
+se generó empleando:
+````markdown
+````r '{r figura1, echo=FALSE}'`
+hist(mtcars$mpg)
+```
+````
 
-Por ejemplo la Figura
-
+aunque no se mostró previamente el código al haber establecido la opción ` ```{r, echo=FALSE} `.
 
 ### Opciones de bloques de código {#opcodigo}
 
 Los trozos de código pueden tener nombre y opciones, se establecen en la cabecera de la forma 
-` ```{r nombre, op1, op2} ` 
-(en el caso anterior no se muestra el código, al haber empleado ` ```{r, echo=FALSE} `). 
+` ```{r nombre, op1, op2} `. 
 Para un listado de las opciones disponibles ver <http://yihui.name/knitr/options>
 (en la [Sección 2.6](https://bookdown.org/yihui/rmarkdown/r-code.html) del libro de RMarkdown
 se incluye un resumen).
@@ -202,7 +218,9 @@ Algunas opciones sobre resultados gráficos:
   (no confundir con el tamaño del resultado), e.g. `fig.width = 5`.
 * `out.width, out.heigh`: tamaño del gráfico, e.g. `='80%'`.
 * `fig.align`: `='left', 'center', 'right'`, establece la alineación.
-* `fig.cap`: leyenda de la figura.
+* `fig.cap`: leyenda de la figura^[Si se genera un documento en PDF/LaTeX el gráfico 
+  se mostrará en un entorno flotante y se puede ajustar la posición empleando la opción 
+  `fig.pos` (por ejemplo, `fig.pos = '!htb'`).].
 * `dev`: dispositivo gráfico de R, por defecto `='pdf'` para LaTeX y `'png'` para HTML.
   Otras opciones son `'svg'` o `'jpeg'`.
 
@@ -210,7 +228,7 @@ Para establecer valores por defecto para todos los bloques de código
 se suele incluir uno de configuración al principio del documento, por ejemplo:
 
 ````markdown
-`r ''````{r, setup, include=FALSE}
+````r '{r, setup, include=FALSE}'`
 knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev='svg', fig.dim=c(5, 7), collapse=TRUE)
 ```
 ````
@@ -241,7 +259,7 @@ gear  |  Número de marchas (hacia adelante)
 carb  |  Número de carburadores
 
 
-Para convertir resultados de R en tablas de una forma simple se puede emplear la función `ktable` del paquete *knitr*:
+Para convertir resultados de R en tablas de una forma simple se puede emplear la función `ktable` del paquete *knitr*. Por ejemplo la Tabla \@ref(tab:kable) se obtuvo mediante el siguiente código:
 ```{r kable}
 knitr::kable(
   head(mtcars), 
@@ -252,8 +270,14 @@ knitr::kable(
 Otros paquetes proporcionan opciones adicionales: *xtable*, *stargazer*, *pander*, *tables* y *ascii*.
 
 ## Cabecera YAML {#yaml}
+En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YAML 
+(YAML Ain’t Markup Language, https://en.wikipedia.org/wiki/YAML), 
+comenzando y terminando con tres guiones `---`. 
+Los metadatos de YAML son típicamente opciones de renderizado consitentes en 
+pares de etiquetas y valores separados por dos puntos^[La mayoría de los campos YAML son opciones 
+que el paquete `rmarkdown` le pasa a Pandoc (ver <https://pandoc.org/MANUAL.html>).]. 
+Por ejemplo:
 
-En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YAML (YAML Ain’t Markup Language, https://en.wikipedia.org/wiki/YAML), comenzando y terminando con tres guiones `---`. Los metadatos de YAML son típicamente opciones de renderizado consitentes en pares de etiquetas y valores separados por dos puntos. Por ejemplo:
 ```yaml
 ---
 title: "Creación de contenidos con RMarkdown"
@@ -406,7 +430,9 @@ Será necesario añadir un campo `bibliography` en la cabezera YAML, por ejemplo
 bibliography: bibliografia.bib
 csl: apa.csl  # opcional
 ```
-Suponiendo que en el directorio de trabajo están los ficheros de bibliografía *bibliografia.bib* y de estilo *apa.csl* (ver  <http://citationstyles.org/>, desde donde se pueden descargar distintos archivos de estilo). 
+Suponiendo que en el directorio de trabajo están los ficheros de bibliografía *bibliografia.bib* 
+y de estilo *apa.csl* (ver  <http://citationstyles.org/>, desde donde se pueden descargar 
+distintos archivos de estilo). 
 
 Las referencias en el texto RMarkdown se incluyen con `@referencia` o `[@referencia]`. 
 Pandoc generará el listado de referencias al final del documento, 
