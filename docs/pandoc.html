@@ -25,7 +25,7 @@
 <meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
 
 
-<meta name="date" content="2018-10-23">
+<meta name="date" content="2018-10-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -188,18 +188,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Podemos emplear Pandoc para convertir contenido escrito en otros formatos a Markdown, por ejemplo:</p>
 <ul>
 <li><p>Un fichero word a markdown</p>
-<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; fichero.docx -f docx -t markdown --extract-media . -o fichero.Rmd </code></pre></li>
+<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; fichero.docx -f docx -t markdown 
+--extract-media . -o fichero.Rmd </code></pre></li>
 <li><p>Un fichero LaTeX a markdown</p>
-<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; fichero.tex -f latex -t markdown -o fichero.Rmd </code></pre></li>
+<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; fichero.tex -f latex -t markdown 
+-o fichero.Rmd </code></pre></li>
 <li><p>Una web a markdown</p>
-<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; http://url.org -f html -t markdown -o fichero.Rmd</code></pre></li>
+<pre><code>&quot;C:\Program Files\RStudio\bin\pandoc\pandoc&quot; http://url.org -f html -t markdown 
+-o fichero.Rmd</code></pre></li>
 </ul>
 <p>Por defecto <em>pandoc</em> produce en algunos casos un fragmento de documento (cuando el formato de salida no es markdown). Para obtener un documento independiente (e.g. un fichero HTML válido incluyendo <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>), habrá que emplear la opción <code>-s</code> o <code>--standalone</code>.</p>
 </div>
 <div id="pandoc-y-rmarkdown" class="section level2">
 <h2><span class="header-section-number">B.3</span> Pandoc y RMarkdown</h2>
-<p>Como ya se comentó, el paquete <code>rmarkdown</code> llama a <em>pandoc</em> para renderizar un documento RMarkdown<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, y esta llamada se muestra en la consola (o en la correspondiente pestaña de RStudio):</p>
-<pre><code>&quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS Informes.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output Informes.html --smart --email-obfuscation none --self-contained --standalone --section-divs --table-of-contents --toc-depth 3 --variable toc_float=1 --variable toc_selectors=h1,h2,h3 --variable toc_collapsed=1 --variable toc_smooth_scroll=1 --variable toc_print=1 --template &quot;C:\PROGRA~1\R\R-35~1.1\library\RMARKD~1\rmd\h\DEFAUL~1.HTM&quot; --no-highlight --variable highlightjs=1 --variable &quot;theme:bootstrap&quot; --include-in-header &quot;C:\Users\RUBEN~1.FCA\AppData\Local\Temp\RtmpkntXD8\rmarkdown-str2084caf51da.html&quot; --mathjax --variable &quot;mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;
+<p>Como ya se comentó, el paquete <code>rmarkdown</code> llama a <em>pandoc</em> para renderizar un documento RMarkdown<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>, y esta llamada se muestra en la consola (o en la correspondiente pestaña de RStudio):</p>
+<pre><code>&quot;C:/Program Files/RStudio/bin/pandoc/pandoc&quot; +RTS -K512m -RTS Informes.utf8.md --to html4 
+--from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash 
+--output Informes.html --smart --email-obfuscation none --self-contained --standalone 
+--section-divs --table-of-contents --toc-depth 3 --variable toc_float=1 
+--variable toc_selectors=h1,h2,h3 --variable toc_collapsed=1 --variable toc_smooth_scroll=1 
+--variable toc_print=1 --template &quot;C:\PROGRA~1\R\R-35~1.1\library\RMARKD~1\rmd\h\DEFAUL~1.HTM&quot;
+--no-highlight --variable highlightjs=1 --variable &quot;theme:bootstrap&quot; --include-in-header
+&quot;C:\Users\RUBEN~1.FCA\AppData\Local\Temp\RtmpkntXD8\rmarkdown-str2084caf51da.html&quot; --mathjax 
+--variable &quot;mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;
 
 Output created: Informes.html</code></pre>
 <p>La mayoría de los campos de la cabecera YAML de un fichero RMarkdown se traducen en las opciones de Pandoc. Por ejemplo, la cabezera:</p>
@@ -220,8 +231,8 @@ Output created: Informes.html</code></pre>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="10">
-<li id="fn10"><p>Desde la <a href="https://blog.rstudio.org/2014/06/18/r-markdown-v2/">versión 2</a>, antes se utilizaba <code>knitr</code> y <code>markdown</code>.<a href="pandoc.html#fnref10">↩</a></p></li>
+<ol start="12">
+<li id="fn12"><p>Desde la <a href="https://blog.rstudio.org/2014/06/18/r-markdown-v2/">versión 2</a>, antes se utilizaba <code>knitr</code> y <code>markdown</code>.<a href="pandoc.html#fnref12">↩</a></p></li>
 </ol>
 </div>
             </section>
