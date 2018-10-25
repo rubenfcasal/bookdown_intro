@@ -21,12 +21,13 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "This is a minimal example of using the bookdown package to write a book.
+The output format for this example is bookdown::gitbook."
 ---
 ```
 
 Obviamente cambiaremos el título, el nombre del autor y la descripción 
-(también nos podrá interesar cambiar las opciones de bibliografía, ver Sección \@ref(github), 
+(también nos podrá interesar cambiar las opciones de bibliografía, ver Sección \@ref(biblio), 
 o las del repositorio GitHub, ver Sección \@ref(github)). 
 Por ejemplo, se puede acceder al fichero *index.Rmd* de este libro
 [aquí](https://github.com/rubenfcasal/bookdown_intro/raw/master/index.Rmd) .

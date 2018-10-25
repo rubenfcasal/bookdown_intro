@@ -73,7 +73,7 @@ Otras fuentes permiten obtener documentación más detallada, como por ejemplo:
 
 Como ya se comentó la sintaxis de Markdown es muy secilla. 
 El texto no marcado se renderiza como texto normal aunque es necesario dejar una línea en blanco para 
-insertar un salto de linea. Las principales reglas de Markdown se sumarizan en la siguiente tabla:
+insertar un salto de línea. Las principales reglas de Markdown se sumarizan en la siguiente tabla:
 
 +--------------------------+-----------------------------+--------------------------+
 | Escribir                 | o alternativamente          | para obtener ...         |
@@ -96,13 +96,13 @@ insertar un salto de linea. Las principales reglas de Markdown se sumarizan en l
 +--------------------------+-----------------------------+--------------------------+
 | ```                      | ```                         |                          |
 | [Enlace](http://url.gz)  | [Enlace][1]                 | [Enlace](http://rmark    |
-|                          | Mas adelante...             | down.rstudio.com)        |
+|                          | Más adelante...             | down.rstudio.com)        |
 |                          | [1]: http://url.gz          |                          |
 | ```                      | ```                         |                          |
 +--------------------------+-----------------------------+--------------------------+
 | ```                      | ```                         |                          |
 | ![Imagen](rmarkdown.png) | ![Imagen][1]                | ![Imagen](images/rmd.png) |
-|                          | Mas adelante...             |                          |
+|                          | Más adelante...             |                          |
 |                          | [1]:http://url/b.jpg        |                          |
 | ```                      | ```                         |                          |
 +--------------------------+-----------------------------+--------------------------+
@@ -386,7 +386,7 @@ Para ello se debe comentar todo lo que no sea código R de una forma especial:
     opts_chunk$set(comment=NA, prompt=TRUE, dev='svg', fig.height=6, fig.width=6)
     ```
 
-Para generar el informe se puede emplear la funcion `spin` del paquete *knitr*. Por ejemplo: `spin("Ridge_Lasso.R"))`.
+Para generar el informe se puede emplear la funcion `spin` del paquete *knitr*. Por ejemplo: `spin("Ridge_Lasso.R")`.
 También se podría abrir directamente el informe generado:
 ```
 browseURL(url = knitr::spin("Ridge_Lasso.R"))

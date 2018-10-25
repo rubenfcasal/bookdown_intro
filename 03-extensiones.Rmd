@@ -3,12 +3,11 @@
 ## Introducción
 
 Para la elaboración de contenido se pueden emplear las componentes de RMarkdown
-descritas en el Apéndice \@ref(rmarkdown), incluyendo la sistaxis de Markdown (Sección \@ref(markdown))
+descritas en el Apéndice \@ref(rmarkdown), incluyendo la sintaxis de Markdown (Sección \@ref(markdown))
 y la inclusión de bloques de código en R (Sección \@ref(codigormd)). 
 Pero como se comenta en este Apéndice, RMarkdown admite extensiones adicionales (proporcionadas por Pandoc),
 que pueden ser de utilidad en la escritura de un libro. 
-Por ejemplo, se pueden añadir sub~índices~ y super^índices^ con `sub~índices~` y `super^índices^`,  
-notas al pie con `^[texto]`, ecuaciones y referencias bibliográficas.
+Por ejemplo, se pueden añadir sub~índices~ y super^índices^ con `sub~índices~` y `super^índices^`, notas al pie con `^[texto]`, ecuaciones y referencias bibliográficas.
 
 El paquete `bookdown` proporciona extensiones adicionales de la sistaxis de RMarkdown 
 especialmente diseñadas para la escritura de libros (ver p.e. la 
@@ -26,7 +25,7 @@ bloques personalizados, HTML widgets, páginas web y aplicaciones Shiny).
 Como ya se comentó, en el fichero de RMarkdown `.Rmd` de cada capítulo, 
 este está definido por el título de primer nivel (e.g. `# Título`; 
 ver Sección \@ref(markdown) para la sintaxis de los distintos niveles de cabeceras), 
-por lo que solo debería haber uno.
+por lo que sólo debería haber uno.
 Además, al renderizar con `bookdown` los capítulos y secciones se numeran automáticamente, siguiendo el orden alfabético de los ficheros. 
 
 Si no se desea numerar algún capítulo o sección, habrá que anádir `{-}` a continuación del correspondiente título (por ejemplo, en el archivo *index.Rmd* se incluyó `# Prólogo {-}`).
@@ -113,7 +112,7 @@ que puede ser referenciada con `\@ref(eq:ecuacion1)`
 (más detalles [aquí](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations)).
   
 
-## Referencias bibliográficas
+## Referencias bibliográficas {#biblio}
 
 RMarkdown también admite bibliografía en distintos formatos, ver p.e. <https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html>.
 Por defecto `bookdown` emplea referencias bibliográficas en formato BibTeX

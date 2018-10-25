@@ -1,4 +1,4 @@
-# Publicacion
+# Publicación
 
 
 La "publicación" del libro web puede ser tan simple como subirlo a
@@ -39,6 +39,6 @@ Sin embargo en el libro de
 [Prácticas de Simulación](https://rubenfcasal.github.io/simbook) 
 se consideró una licencia
 [Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es_ES),
-de forma preliminar...
+de forma preliminar.
 
-Se puede incluir la licencia en formato texto en un archivo *LICENSE* en la raiz del proyecto.
+Se puede incluir la licencia en formato texto en un archivo *LICENSE* en la raíz del proyecto.
