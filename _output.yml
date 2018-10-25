@@ -7,6 +7,10 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
     edit: https://github.com/rubenfcasal/bookdown_intro/edit/master/%s
+    sharing:
+      github: yes
+      facebook: no
+      twitter: no
     download: "pdf"
 #    download: ["pdf", "epub"]
 bookdown::pdf_book:

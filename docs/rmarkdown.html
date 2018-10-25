@@ -25,7 +25,7 @@
 <meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
 
 
-<meta name="date" content="2018-10-24">
+<meta name="date" content="2018-10-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -118,10 +118,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2" data-path="componentes.html"><a href="componentes.html#secciones-y-cabeceras"><i class="fa fa-check"></i><b>3.2</b> Secciones y cabeceras</a></li>
 <li class="chapter" data-level="3.3" data-path="componentes.html"><a href="componentes.html#figuras-y-tablas"><i class="fa fa-check"></i><b>3.3</b> Figuras y tablas</a></li>
 <li class="chapter" data-level="3.4" data-path="componentes.html"><a href="componentes.html#ecuaciones"><i class="fa fa-check"></i><b>3.4</b> Ecuaciones</a></li>
-<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#referencias-bibliograficas"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
+<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#biblio"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
 <li class="chapter" data-level="3.6" data-path="componentes.html"><a href="componentes.html#entornos"><i class="fa fa-check"></i><b>3.6</b> Entornos</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicacion</a><ul>
+<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicación</a><ul>
 <li class="chapter" data-level="4.1" data-path="publicacion.html"><a href="publicacion.html#github"><i class="fa fa-check"></i><b>4.1</b> GitHub Pages</a></li>
 <li class="chapter" data-level="4.2" data-path="publicacion.html"><a href="publicacion.html#licencia"><i class="fa fa-check"></i><b>4.2</b> Licencia</a></li>
 </ul></li>
@@ -190,7 +190,7 @@ browseURL(url = render(&quot;Informe.Rmd&quot;))</code></pre>
 </div>
 <div id="markdown" class="section level2">
 <h2><span class="header-section-number">A.2</span> Sintaxis de Markdown</h2>
-<p>Como ya se comentó la sintaxis de Markdown es muy secilla. El texto no marcado se renderiza como texto normal aunque es necesario dejar una línea en blanco para insertar un salto de linea. Las principales reglas de Markdown se sumarizan en la siguiente tabla:</p>
+<p>Como ya se comentó la sintaxis de Markdown es muy secilla. El texto no marcado se renderiza como texto normal aunque es necesario dejar una línea en blanco para insertar un salto de línea. Las principales reglas de Markdown se sumarizan en la siguiente tabla:</p>
 <table>
 <colgroup>
 <col width="32%" />
@@ -233,7 +233,7 @@ Título 2
  
  </code></pre></td>
 <td><pre><code>[Enlace][1]
-Mas adelante...
+Más adelante...
 [1]: http://url.gz</code></pre></td>
 <td><a href="http://rmark%20down.rstudio.com">Enlace</a></td>
 </tr>
@@ -242,7 +242,7 @@ Mas adelante...
  
  </code></pre></td>
 <td><pre><code>![Imagen][1]
-Mas adelante...
+Más adelante...
 [1]:http://url/b.jpg</code></pre></td>
 <td><img src="images/rmd.png" title="fig:" alt="Imagen" /></td>
 </tr>
@@ -593,7 +593,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
   <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Universidade da Coruña&quot;</span>
 <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Tomás R. Cotos Yáñez (tcotos@uvigo.es)&quot;</span>
   <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Universidade de Vigo&quot;</span>
-<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-24&quot;</span>
+<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-25&quot;</span>
 <span class="fu">logo:</span><span class="at"> rmarkdown.png</span>
 <span class="fu">output:</span>
   <span class="fu">html_document:</span>
@@ -632,7 +632,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
 <pre><code>#+ setup, include=FALSE
 opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.height=6, fig.width=6)</code></pre></li>
 </ul>
-<p>Para generar el informe se puede emplear la funcion <code>spin</code> del paquete <em>knitr</em>. Por ejemplo: <code>spin(&quot;Ridge_Lasso.R&quot;))</code>. También se podría abrir directamente el informe generado:</p>
+<p>Para generar el informe se puede emplear la funcion <code>spin</code> del paquete <em>knitr</em>. Por ejemplo: <code>spin(&quot;Ridge_Lasso.R&quot;)</code>. También se podría abrir directamente el informe generado:</p>
 <pre><code>browseURL(url = knitr::spin(&quot;Ridge_Lasso.R&quot;))</code></pre>
 <p>Pero puede ser recomendable renderizarlo con rmarkdown:</p>
 <pre><code>library(rmarkdown)
@@ -701,9 +701,9 @@ y notas al pie con <code>^[texto]</code>.</p>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": true,
+"facebook": false,
+"twitter": false,
 "google": false,
 "linkedin": false,
 "weibo": false,

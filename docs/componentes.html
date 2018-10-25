@@ -25,7 +25,7 @@
 <meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
 
 
-<meta name="date" content="2018-10-24">
+<meta name="date" content="2018-10-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -118,10 +118,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2" data-path="componentes.html"><a href="componentes.html#secciones-y-cabeceras"><i class="fa fa-check"></i><b>3.2</b> Secciones y cabeceras</a></li>
 <li class="chapter" data-level="3.3" data-path="componentes.html"><a href="componentes.html#figuras-y-tablas"><i class="fa fa-check"></i><b>3.3</b> Figuras y tablas</a></li>
 <li class="chapter" data-level="3.4" data-path="componentes.html"><a href="componentes.html#ecuaciones"><i class="fa fa-check"></i><b>3.4</b> Ecuaciones</a></li>
-<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#referencias-bibliograficas"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
+<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#biblio"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
 <li class="chapter" data-level="3.6" data-path="componentes.html"><a href="componentes.html#entornos"><i class="fa fa-check"></i><b>3.6</b> Entornos</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicacion</a><ul>
+<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicación</a><ul>
 <li class="chapter" data-level="4.1" data-path="publicacion.html"><a href="publicacion.html#github"><i class="fa fa-check"></i><b>4.1</b> GitHub Pages</a></li>
 <li class="chapter" data-level="4.2" data-path="publicacion.html"><a href="publicacion.html#licencia"><i class="fa fa-check"></i><b>4.2</b> Licencia</a></li>
 </ul></li>
@@ -169,14 +169,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Capítulo 3</span> Componentes</h1>
 <div id="introduccion" class="section level2">
 <h2><span class="header-section-number">3.1</span> Introducción</h2>
-<p>Para la elaboración de contenido se pueden emplear las componentes de RMarkdown descritas en el Apéndice <a href="rmarkdown.html#rmarkdown">A</a>, incluyendo la sistaxis de Markdown (Sección <a href="rmarkdown.html#markdown">A.2</a>) y la inclusión de bloques de código en R (Sección <a href="rmarkdown.html#codigormd">A.3</a>). Pero como se comenta en este Apéndice, RMarkdown admite extensiones adicionales (proporcionadas por Pandoc), que pueden ser de utilidad en la escritura de un libro. Por ejemplo, se pueden añadir sub<sub>índices</sub> y super<sup>índices</sup> con <code>sub~índices~</code> y <code>super^índices^</code>,<br />
-notas al pie con <code>^[texto]</code>, ecuaciones y referencias bibliográficas.</p>
+<p>Para la elaboración de contenido se pueden emplear las componentes de RMarkdown descritas en el Apéndice <a href="rmarkdown.html#rmarkdown">A</a>, incluyendo la sintaxis de Markdown (Sección <a href="rmarkdown.html#markdown">A.2</a>) y la inclusión de bloques de código en R (Sección <a href="rmarkdown.html#codigormd">A.3</a>). Pero como se comenta en este Apéndice, RMarkdown admite extensiones adicionales (proporcionadas por Pandoc), que pueden ser de utilidad en la escritura de un libro. Por ejemplo, se pueden añadir sub<sub>índices</sub> y super<sup>índices</sup> con <code>sub~índices~</code> y <code>super^índices^</code>, notas al pie con <code>^[texto]</code>, ecuaciones y referencias bibliográficas.</p>
 <p>El paquete <code>bookdown</code> proporciona extensiones adicionales de la sistaxis de RMarkdown especialmente diseñadas para la escritura de libros (ver p.e. la <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html">Sección 2.2</a> del libro de bookdown), además el comportamiento de algunos resultados cambia al renderizar con este paquete.</p>
 <p>El las siguientes secciones se mostrarán algunas de estas extensiones de RMarkdown y de <code>bookdown</code> (en el <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html">Capítulo 2</a> del libro de bookdown se detallan todas las extensiones <code>bookdown</code>, incluyendo referencias de texto, bloques personalizados, HTML widgets, páginas web y aplicaciones Shiny).</p>
 </div>
 <div id="secciones-y-cabeceras" class="section level2">
 <h2><span class="header-section-number">3.2</span> Secciones y cabeceras</h2>
-<p>Como ya se comentó, en el fichero de RMarkdown <code>.Rmd</code> de cada capítulo, este está definido por el título de primer nivel (e.g. <code># Título</code>; ver Sección <a href="rmarkdown.html#markdown">A.2</a> para la sintaxis de los distintos niveles de cabeceras), por lo que solo debería haber uno. Además, al renderizar con <code>bookdown</code> los capítulos y secciones se numeran automáticamente, siguiendo el orden alfabético de los ficheros.</p>
+<p>Como ya se comentó, en el fichero de RMarkdown <code>.Rmd</code> de cada capítulo, este está definido por el título de primer nivel (e.g. <code># Título</code>; ver Sección <a href="rmarkdown.html#markdown">A.2</a> para la sintaxis de los distintos niveles de cabeceras), por lo que sólo debería haber uno. Además, al renderizar con <code>bookdown</code> los capítulos y secciones se numeran automáticamente, siguiendo el orden alfabético de los ficheros.</p>
 <p>Si no se desea numerar algún capítulo o sección, habrá que anádir <code>{-}</code> a continuación del correspondiente título (por ejemplo, en el archivo <em>index.Rmd</em> se incluyó <code># Prólogo {-}</code>).</p>
 <p>Para referenciar un capítulo o sección, se puede añadir una etiqueta de la forma <code>{#etiqueta}</code> a continuación del correspondiente título, después se podrá referenciar en el texto empleando <code>\@ref(etiqueta)</code>, que al renderizar producirá un enlace con la correspondiente numeración (más detalles en la <a href="https://bookdown.org/yihui/bookdown/cross-references.html">Sección 2.6</a> del libro de bookdown).</p>
 <p>Adicionalmente hay dos tipos especiales de cabeceras de primer nivel que pueden ser empleadas en <code>bookdown</code>:</p>
@@ -226,7 +225,7 @@ f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \tag{3.1}
 \end{equation}\]</span>
 <p>que puede ser referenciada con <code>\@ref(eq:ecuacion1)</code> (más detalles <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations">aquí</a>).</p>
 </div>
-<div id="referencias-bibliograficas" class="section level2">
+<div id="biblio" class="section level2">
 <h2><span class="header-section-number">3.5</span> Referencias bibliográficas</h2>
 <p>RMarkdown también admite bibliografía en distintos formatos, ver p.e. <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html" class="uri">https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html</a>. Por defecto <code>bookdown</code> emplea referencias bibliográficas en formato BibTeX (lo que se describe con detalle <a href="https://bookdown.org/yihui/bookdown/citations.html">aquí</a>). Para especificar uno o más archivos de bibliografía <em>.bib</em>, se usa el campo <code>bibliography</code> en el fichero <em>Index.Rmd</em>. Por defecto es de la forma:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
@@ -350,9 +349,9 @@ Esto es un ejemplo.
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": true,
+"facebook": false,
+"twitter": false,
 "google": false,
 "linkedin": false,
 "weibo": false,

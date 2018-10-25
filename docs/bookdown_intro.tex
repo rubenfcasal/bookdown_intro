@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-24}
+    \date{2018-10-25}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -230,7 +230,7 @@ ejemplo los libros (disponibles de forma gratuita en línea):
   \url{https://bookdown.org/yihui/rmarkdown/}.
 \end{itemize}
 
-Ejemplos de este tipo de libros \footnote{Los libros de Hadley
+Ejemplos de este tipo de libros\footnote{Los libros de Hadley
   \href{http://adv-r.had.co.nz}{Advanced R} y
   \href{http://r-pkgs.had.co.nz}{R packages} serían ejemplos con una
   versión ``preliminar'' de este paquete.} se tienen en
@@ -279,7 +279,7 @@ descritos en la Sección \ref{conversion}.
   \href{https://miktex.org/download}{MiKTeX}, o actualizarlo (ejecutando
   MiKTeX Update) si ya está instalado. En Mac OS X se puede instalar
   \href{http://www.tug.org/mactex/}{MacTeX} y en Linux
-  \href{http://www.tug.org/texlive}{TeXLive} \footnote{Aunque el autor
+  \href{http://www.tug.org/texlive}{TeXLive}\footnote{Aunque el autor
     del paquete \texttt{bookdown} recomienda instalar
     \href{https://yihui.name/tinytex}{TinyTeX}.}.
 \end{enumerate}
@@ -291,7 +291,7 @@ proyecto nuevo empleando el menú \emph{File \textgreater{} New Project
 \textgreater{} New Directory \textgreater{} Book project using
 bookdown}. Alternativamente se podría usar como plantilla algún libro
 publicado (este se puede descargar
-\href{https://github.com/rubenfcasal/bookdown_intro/archive/master.zip}{aqui}).
+\href{https://github.com/rubenfcasal/bookdown_intro/archive/master.zip}{aquí}).
 Por ejemplo, el proyecto que crea por defecto RStudio está disponible en
 el repositorio de GitHub
 \href{https://github.com/rstudio/bookdown-demo}{rstudio/bookdown-demo} y
@@ -301,9 +301,9 @@ Posteriormente se pueden ir modificando (añadiendo o eliminando) los
 ficheros \emph{.Rmd} correspondientes a los distintos capítulos.
 
 Si se abre el proyecto en RStudio, se puede compilar empleando el boton
-\emph{Build Book} \footnote{Alternativamente se puede ejecutar la
-  función \texttt{render\_book()} en el directorio del proyecto} en la
-pestaña \emph{Build}. Por defecto se generará el libro (en los distintos
+\emph{Build Book}\footnote{Alternativamente se puede ejecutar la función
+  \texttt{render\_book()} en el directorio del proyecto} en la pestaña
+\emph{Build}. Por defecto se generará el libro (en los distintos
 formatos) en la carpeta \emph{\_book} y al terminar se abrirá
 automáticamente la versión HTML. El libro se generará (de forma
 simultánea en los formatos deseados) a partir de una serie de documentos
@@ -319,20 +319,20 @@ a compilar.
 
 \section{Estructura del libro}\label{estructura-del-libro}
 
-La estructura del libro se corresponde con un conjunto de diretorios y
+La estructura del libro se corresponde con un conjunto de directorios y
 ficheros, los principales serían:
 
 \begin{itemize}
 \item
   Un fichero inicial de RMarkdown \emph{index.Rmd} con diferentes
-  configuraciones generales (titulo, autor, fecha, \ldots{}) y donde se
+  configuraciones generales (título, autor, fecha, \ldots{}) y donde se
   puede incluir un prólogo/preámbulo/prefacio.
 \item
   Un fichero de RMarkdown \emph{.Rmd} para cada capítulo, definido por
   el título de primer nivel \texttt{\#}. Los capítulos se ordenarán
-  siguiendo el orden alfabético de los nombres de los ficheros
-  \footnote{Evitar espacios (y acentos) en los nombres de los ficheros
-    de los capítulos.}.
+  siguiendo el orden alfabético de los nombres de los ficheros\footnote{Evitar
+    espacios (y acentos) en los nombres de los ficheros de los
+    capítulos.}.
 \item
   Archivo \emph{\_bookdown.yml} de configuración donde se espefican
   parámetros opcionales para la compilación del libro.
@@ -349,7 +349,8 @@ ficheros, los principales serían:
 \end{itemize}
 
 Se pueden incluir directorios adicionales, por ejemplo una carpeta
-\emph{images} que contenga las imágenes estáticas.
+\emph{images} que contenga las imágenes estáticas y una carpeta de
+\emph{data} con los archivos de datos a usar.
 
 \chapter{Archivos de configuración}\label{archivos-de-configuracion}
 
@@ -369,7 +370,7 @@ utilizar para configurar distintas opciones:
 \OtherTok{--- }
 \FunctionTok{title:}\AttributeTok{ }\StringTok{"A Minimal Book Example"}
 \FunctionTok{author:}\AttributeTok{ }\StringTok{"Yihui Xie"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-24"}
+\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-25"}
 \FunctionTok{site:}\AttributeTok{ bookdown::bookdown_site}
 \FunctionTok{output:}\AttributeTok{ bookdown::gitbook}
 \FunctionTok{documentclass:}\AttributeTok{ book}
@@ -377,14 +378,15 @@ utilizar para configurar distintas opciones:
 \FunctionTok{biblio-style:}\AttributeTok{ apalike}
 \FunctionTok{link-citations:}\AttributeTok{ yes}
 \FunctionTok{github-repo:}\AttributeTok{ rstudio/bookdown-demo}
-\FunctionTok{description:}\AttributeTok{ }\StringTok{"This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."}
+\FunctionTok{description:}\AttributeTok{ }\StringTok{"This is a minimal example of using the bookdown package to write a book.}
+\StringTok{The output format for this example is bookdown::gitbook."}
 \OtherTok{---}
 \end{Highlighting}
 \end{Shaded}
 
 Obviamente cambiaremos el título, el nombre del autor y la descripción
 (también nos podrá interesar cambiar las opciones de bibliografía, ver
-Sección \ref{github}, o las del repositorio GitHub, ver Sección
+Sección \ref{biblio}, o las del repositorio GitHub, ver Sección
 \ref{github}). Por ejemplo, se puede acceder al fichero \emph{index.Rmd}
 de este libro
 \href{https://github.com/rubenfcasal/bookdown_intro/raw/master/index.Rmd}{aquí}
@@ -561,16 +563,15 @@ de bookdown}.
 
 Para la elaboración de contenido se pueden emplear las componentes de
 RMarkdown descritas en el Apéndice \ref{rmarkdown}, incluyendo la
-sistaxis de Markdown (Sección \ref{markdown}) y la inclusión de bloques
+sintaxis de Markdown (Sección \ref{markdown}) y la inclusión de bloques
 de código en R (Sección \ref{codigormd}). Pero como se comenta en este
 Apéndice, RMarkdown admite extensiones adicionales (proporcionadas por
 Pandoc), que pueden ser de utilidad en la escritura de un libro. Por
 ejemplo, se pueden añadir sub\textsubscript{índices} y
 super\textsuperscript{índices} con
 \texttt{sub\textasciitilde{}índices\textasciitilde{}} y
-\texttt{super\^{}índices\^{}},\\
-notas al pie con \texttt{\^{}{[}texto{]}}, ecuaciones y referencias
-bibliográficas.
+\texttt{super\^{}índices\^{}}, notas al pie con
+\texttt{\^{}{[}texto{]}}, ecuaciones y referencias bibliográficas.
 
 El paquete \texttt{bookdown} proporciona extensiones adicionales de la
 sistaxis de RMarkdown especialmente diseñadas para la escritura de
@@ -591,7 +592,7 @@ personalizados, HTML widgets, páginas web y aplicaciones Shiny).
 Como ya se comentó, en el fichero de RMarkdown \texttt{.Rmd} de cada
 capítulo, este está definido por el título de primer nivel (e.g.
 \texttt{\#\ Título}; ver Sección \ref{markdown} para la sintaxis de los
-distintos niveles de cabeceras), por lo que solo debería haber uno.
+distintos niveles de cabeceras), por lo que sólo debería haber uno.
 Además, al renderizar con \texttt{bookdown} los capítulos y secciones se
 numeran automáticamente, siguiendo el orden alfabético de los ficheros.
 
@@ -725,7 +726,7 @@ que puede ser referenciada con
 \texttt{\textbackslash{}@ref(eq:ecuacion1)} (más detalles
 \href{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html\#equations}{aquí}).
 
-\section{Referencias bibliográficas}\label{referencias-bibliograficas}
+\section{Referencias bibliográficas}\label{biblio}
 
 RMarkdown también admite bibliografía en distintos formatos, ver p.e.
 \url{https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html}.
@@ -846,7 +847,7 @@ obteniéndose el Ejemplo \ref{exm:foo}, que se puede referenciar con
 bookdown) \fi{} }Esto es un ejemplo.
 \EndKnitrBlock{example}
 
-\chapter{Publicacion}\label{publicacion}
+\chapter{Publicación}\label{publicacion}
 
 La ``publicación'' del libro web puede ser tan simple como subirlo a
 \href{https://help.github.com}{GitHub} (estableciendo antes las opciones
@@ -896,10 +897,10 @@ el libro de \href{https://rubenfcasal.github.io/simbook}{Prácticas de
 Simulación} se consideró una licencia
 \href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es_ES}{Creative
 Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional},
-de forma preliminar\ldots{}
+de forma preliminar.
 
 Se puede incluir la licencia en formato texto en un archivo
-\emph{LICENSE} en la raiz del proyecto.
+\emph{LICENSE} en la raíz del proyecto.
 
 \appendix
 
@@ -980,7 +981,7 @@ ejemplo:
 
 Como ya se comentó la sintaxis de Markdown es muy secilla. El texto no
 marcado se renderiza como texto normal aunque es necesario dejar una
-línea en blanco para insertar un salto de linea. Las principales reglas
+línea en blanco para insertar un salto de línea. Las principales reglas
 de Markdown se sumarizan en la siguiente tabla:
 
 \begin{longtable}[]{@{}lll@{}}
@@ -1051,7 +1052,7 @@ __Negrita__
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \begin{verbatim}
 [Enlace][1]
-Mas adelante...
+Más adelante...
 [1]: http://url.gz
 \end{verbatim}
 \strut
@@ -1068,7 +1069,7 @@ Mas adelante...
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \begin{verbatim}
 ![Imagen][1]
-Mas adelante...
+Más adelante...
 [1]:http://url/b.jpg
 \end{verbatim}
 \strut
@@ -1533,7 +1534,7 @@ Un ejemplo adicional\footnote{Puede ser interesante ejecutar
   \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade da Coruña"}
 \KeywordTok{-} \FunctionTok{name:}\AttributeTok{ }\StringTok{"Tomás R. Cotos Yáñez (tcotos@uvigo.es)"}
   \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade de Vigo"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-24"}
+\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-25"}
 \FunctionTok{logo:}\AttributeTok{ rmarkdown.png}
 \FunctionTok{output:}
   \FunctionTok{html_document:}
@@ -1610,7 +1611,7 @@ opts_chunk$set(comment=NA, prompt=TRUE, dev='svg', fig.height=6, fig.width=6)
 \end{itemize}
 
 Para generar el informe se puede emplear la funcion \texttt{spin} del
-paquete \emph{knitr}. Por ejemplo: \texttt{spin("Ridge\_Lasso.R"))}.
+paquete \emph{knitr}. Por ejemplo: \texttt{spin("Ridge\_Lasso.R")}.
 También se podría abrir directamente el informe generado:
 
 \begin{verbatim}

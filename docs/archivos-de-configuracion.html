@@ -25,7 +25,7 @@
 <meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
 
 
-<meta name="date" content="2018-10-24">
+<meta name="date" content="2018-10-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -118,10 +118,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2" data-path="componentes.html"><a href="componentes.html#secciones-y-cabeceras"><i class="fa fa-check"></i><b>3.2</b> Secciones y cabeceras</a></li>
 <li class="chapter" data-level="3.3" data-path="componentes.html"><a href="componentes.html#figuras-y-tablas"><i class="fa fa-check"></i><b>3.3</b> Figuras y tablas</a></li>
 <li class="chapter" data-level="3.4" data-path="componentes.html"><a href="componentes.html#ecuaciones"><i class="fa fa-check"></i><b>3.4</b> Ecuaciones</a></li>
-<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#referencias-bibliograficas"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
+<li class="chapter" data-level="3.5" data-path="componentes.html"><a href="componentes.html#biblio"><i class="fa fa-check"></i><b>3.5</b> Referencias bibliográficas</a></li>
 <li class="chapter" data-level="3.6" data-path="componentes.html"><a href="componentes.html#entornos"><i class="fa fa-check"></i><b>3.6</b> Entornos</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicacion</a><ul>
+<li class="chapter" data-level="4" data-path="publicacion.html"><a href="publicacion.html"><i class="fa fa-check"></i><b>4</b> Publicación</a><ul>
 <li class="chapter" data-level="4.1" data-path="publicacion.html"><a href="publicacion.html#github"><i class="fa fa-check"></i><b>4.1</b> GitHub Pages</a></li>
 <li class="chapter" data-level="4.2" data-path="publicacion.html"><a href="publicacion.html#licencia"><i class="fa fa-check"></i><b>4.2</b> Licencia</a></li>
 </ul></li>
@@ -174,7 +174,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">--- </span>
 <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;A Minimal Book Example&quot;</span>
 <span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span>
-<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-24&quot;</span>
+<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-25&quot;</span>
 <span class="fu">site:</span><span class="at"> bookdown::bookdown_site</span>
 <span class="fu">output:</span><span class="at"> bookdown::gitbook</span>
 <span class="fu">documentclass:</span><span class="at"> book</span>
@@ -182,9 +182,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="fu">biblio-style:</span><span class="at"> apalike</span>
 <span class="fu">link-citations:</span><span class="at"> yes</span>
 <span class="fu">github-repo:</span><span class="at"> rstudio/bookdown-demo</span>
-<span class="fu">description:</span><span class="at"> </span><span class="st">&quot;This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.&quot;</span>
+<span class="fu">description:</span><span class="at"> </span><span class="st">&quot;This is a minimal example of using the bookdown package to write a book.</span>
+<span class="st">The output format for this example is bookdown::gitbook.&quot;</span>
 <span class="ot">---</span></code></pre></div>
-<p>Obviamente cambiaremos el título, el nombre del autor y la descripción (también nos podrá interesar cambiar las opciones de bibliografía, ver Sección <a href="publicacion.html#github">4.1</a>, o las del repositorio GitHub, ver Sección <a href="publicacion.html#github">4.1</a>). Por ejemplo, se puede acceder al fichero <em>index.Rmd</em> de este libro <a href="https://github.com/rubenfcasal/bookdown_intro/raw/master/index.Rmd">aquí</a> .</p>
+<p>Obviamente cambiaremos el título, el nombre del autor y la descripción (también nos podrá interesar cambiar las opciones de bibliografía, ver Sección <a href="componentes.html#biblio">3.5</a>, o las del repositorio GitHub, ver Sección <a href="publicacion.html#github">4.1</a>). Por ejemplo, se puede acceder al fichero <em>index.Rmd</em> de este libro <a href="https://github.com/rubenfcasal/bookdown_intro/raw/master/index.Rmd">aquí</a> .</p>
 <p>Aunque se pueden especificar en esta cabecera otras opciones relacionadas con Pandoc, como por ejemplo opciones del formato de salida:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">output:</span>
@@ -300,9 +301,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
+"github": true,
+"facebook": false,
+"twitter": false,
 "google": false,
 "linkedin": false,
 "weibo": false,
