@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-25}
+    \date{2018-10-28}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -287,7 +287,7 @@ descritos en la Sección \ref{conversion}.
 \section{Primeros pasos}\label{primeros-pasos}
 
 Si se emplea RStudio (recomendado), lo más cómodo sería crear un
-proyecto nuevo empleando el menú \emph{File \textgreater{} New Project
+proyecto nuevo mediante el menú \emph{File \textgreater{} New Project
 \textgreater{} New Directory \textgreater{} Book project using
 bookdown}. Alternativamente se podría usar como plantilla algún libro
 publicado (este se puede descargar
@@ -302,7 +302,7 @@ ficheros \emph{.Rmd} correspondientes a los distintos capítulos.
 
 Si se abre el proyecto en RStudio, se puede compilar empleando el boton
 \emph{Build Book}\footnote{Alternativamente se puede ejecutar la función
-  \texttt{render\_book()} en el directorio del proyecto} en la pestaña
+  \texttt{render\_book()} en el directorio del proyecto.} en la pestaña
 \emph{Build}. Por defecto se generará el libro (en los distintos
 formatos) en la carpeta \emph{\_book} y al terminar se abrirá
 automáticamente la versión HTML. El libro se generará (de forma
@@ -370,7 +370,7 @@ utilizar para configurar distintas opciones:
 \OtherTok{--- }
 \FunctionTok{title:}\AttributeTok{ }\StringTok{"A Minimal Book Example"}
 \FunctionTok{author:}\AttributeTok{ }\StringTok{"Yihui Xie"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-25"}
+\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-28"}
 \FunctionTok{site:}\AttributeTok{ bookdown::bookdown_site}
 \FunctionTok{output:}\AttributeTok{ bookdown::gitbook}
 \FunctionTok{documentclass:}\AttributeTok{ book}
@@ -712,7 +712,7 @@ referenciadas posteriormente. Por ejemplo:
 \KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{equation}\NormalTok{\}}\SpecialStringTok{ }
 \SpecialStringTok{  f}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{(k}\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{) = }\SpecialCharTok{\textbackslash{}binom}\SpecialStringTok{\{n\}\{k\} p^k}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{(1-p}\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{)^\{n-k\}}
 \SpecialStringTok{  (}\SpecialCharTok{\textbackslash{}#}\SpecialStringTok{eq:ecuacion1)}
-\SpecialCharTok{\textbackslash{}end}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{equation}\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1448,9 +1448,7 @@ formato YAML (YAML Ain't Markup Language,
 \url{https://en.wikipedia.org/wiki/YAML}), comenzando y terminando con
 tres guiones \texttt{-\/-\/-}. Los metadatos de YAML son típicamente
 opciones de renderizado consitentes en pares de etiquetas y valores
-separados por dos puntos\footnote{La mayoría de los campos YAML son
-  opciones que el paquete \texttt{rmarkdown} le pasa a Pandoc (ver
-  \url{https://pandoc.org/MANUAL.html}).}. Por ejemplo:
+separados por dos puntos. Por ejemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1534,7 +1532,7 @@ Un ejemplo adicional\footnote{Puede ser interesante ejecutar
   \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade da Coruña"}
 \KeywordTok{-} \FunctionTok{name:}\AttributeTok{ }\StringTok{"Tomás R. Cotos Yáñez (tcotos@uvigo.es)"}
   \FunctionTok{affiliation:}\AttributeTok{ }\StringTok{"Universidade de Vigo"}
-\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-25"}
+\FunctionTok{date:}\AttributeTok{ }\StringTok{"2018-10-28"}
 \FunctionTok{logo:}\AttributeTok{ rmarkdown.png}
 \FunctionTok{output:}
   \FunctionTok{html_document:}
@@ -1630,6 +1628,23 @@ En \emph{RStudio} basta con pulsar ``Ctrl + Shift + K'' o seleccionar
 también \emph{File \textgreater{} Compile Notebook} o hacer clic en el
 icono correspondiente).
 
+Por ejemplo, si se quiere convertir la salidas de un fichero de código
+de R a formato LaTeX (para añadirlas fácilmente a un documento en este
+formato), bastaría con incluir una cabecera de la forma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{#' ---}
+\NormalTok{#' title: "Título"}
+\NormalTok{#' author: "Autor"}
+\NormalTok{#' date: "Fecha"}
+\NormalTok{#' output:}
+\NormalTok{#'   pdf_document:}
+\NormalTok{#'      keep_tex: true}
+\NormalTok{#' ---}
+\end{Highlighting}
+\end{Shaded}
+
 \section{Extensiones RMarkdown de
 pandoc}\label{extensiones-rmarkdown-de-pandoc}
 
@@ -1686,8 +1701,8 @@ distintos archivos de estilo).
 Las referencias en el texto RMarkdown se incluyen con
 \texttt{@referencia} o \texttt{{[}@referencia{]}}. Pandoc generará el
 listado de referencias al final del documento, por lo que nos puede
-interesar insertar una última sección \texttt{\#\ Referencias\ \{-\}} al
-generar documentos HTML (en PDF se hará automáticamente al emplear
+interesar insertar una última sección \texttt{\#\ Bibliografía\ \{-\}}
+al generar documentos HTML (en PDF se hará automáticamente al emplear
 LaTeX). En RStudio se puede instalar el
 ``\href{https://rstudio.github.io/rstudioaddins/}{Addin}''
 \href{https://github.com/crsh/citr}{\texttt{citr}} para insertar citas a

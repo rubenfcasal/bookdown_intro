@@ -274,8 +274,7 @@ En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YA
 (YAML Ain’t Markup Language, https://en.wikipedia.org/wiki/YAML), 
 comenzando y terminando con tres guiones `---`. 
 Los metadatos de YAML son típicamente opciones de renderizado consitentes en 
-pares de etiquetas y valores separados por dos puntos^[La mayoría de los campos YAML son opciones 
-que el paquete `rmarkdown` le pasa a Pandoc (ver <https://pandoc.org/MANUAL.html>).]. 
+pares de etiquetas y valores separados por dos puntos. 
 Por ejemplo:
 
 ```yaml
@@ -398,6 +397,20 @@ browseURL(url = render(knitr::spin("Ridge_Lasso.R", knit = FALSE)))
 ```
 En *RStudio* basta con pulsar "Ctrl + Shift + K" o seleccionar *File > Knit Document* (en las últimas versiones también *File > Compile Notebook* o hacer clic en el icono correspondiente).
 
+Por ejemplo, si se quiere convertir la salidas de un fichero de código de R a formato LaTeX 
+(para añadirlas fácilmente a un documento en este formato), bastaría con incluir una cabecera de
+la forma:
+```markdown
+#' ---
+#' title: "Título"
+#' author: "Autor"
+#' date: "Fecha"
+#' output:
+#'   pdf_document:
+#'      keep_tex: true
+#' ---
+```
+
 
 ## Extensiones RMarkdown de pandoc
 
@@ -436,7 +449,7 @@ distintos archivos de estilo).
 
 Las referencias en el texto RMarkdown se incluyen con `@referencia` o `[@referencia]`. 
 Pandoc generará el listado de referencias al final del documento, 
-por lo que nos puede interesar insertar una última sección `# Referencias {-}`
+por lo que nos puede interesar insertar una última sección `# Bibliografía {-}`
 al generar documentos HTML (en PDF se hará automáticamente al emplear LaTeX).
 En RStudio se puede instalar el "[Addin](https://rstudio.github.io/rstudioaddins/)"
 [`citr`](https://github.com/crsh/citr) para insertar

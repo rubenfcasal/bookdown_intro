@@ -25,7 +25,7 @@
 <meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
 
 
-<meta name="date" content="2018-10-25">
+<meta name="date" content="2018-10-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -557,7 +557,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
 </div>
 <div id="yaml" class="section level2">
 <h2><span class="header-section-number">A.5</span> Cabecera YAML</h2>
-<p>En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YAML (YAML Ain’t Markup Language, <a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>), comenzando y terminando con tres guiones <code>---</code>. Los metadatos de YAML son típicamente opciones de renderizado consitentes en pares de etiquetas y valores separados por dos puntos<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>. Por ejemplo:</p>
+<p>En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YAML (YAML Ain’t Markup Language, <a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>), comenzando y terminando con tres guiones <code>---</code>. Los metadatos de YAML son típicamente opciones de renderizado consitentes en pares de etiquetas y valores separados por dos puntos. Por ejemplo:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Creación de contenidos con RMarkdown&quot;</span>
 <span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Fernández-Casal, R. y Cotos-Yáñez, T.R.&quot;</span>
@@ -584,7 +584,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
     <span class="fu">fig_height:</span><span class="at"> 6</span>
     <span class="fu">fig_caption:</span><span class="at"> true</span></code></pre></div>
 <p>La mayoría de los campos YAML son opciones que el paquete <code>rmarkdown</code> le pasa a Pandoc (ver documentación en el Apéndice <a href="pandoc.html#pandoc">B</a>).</p>
-<p>Un ejemplo adicional<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>:</p>
+<p>Un ejemplo adicional<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Creación de contenidos con RMarkdown&quot;</span>
 <span class="fu">subtitle:</span><span class="at"> </span><span class="st">&quot;Curso de introducción a R&quot;</span>
@@ -593,7 +593,7 @@ knitr::opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.dim=c(5, 7
   <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Universidade da Coruña&quot;</span>
 <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Tomás R. Cotos Yáñez (tcotos@uvigo.es)&quot;</span>
   <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Universidade de Vigo&quot;</span>
-<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-25&quot;</span>
+<span class="fu">date:</span><span class="at"> </span><span class="st">&quot;2018-10-28&quot;</span>
 <span class="fu">logo:</span><span class="at"> rmarkdown.png</span>
 <span class="fu">output:</span>
   <span class="fu">html_document:</span>
@@ -638,6 +638,15 @@ opts_chunk$set(comment=NA, prompt=TRUE, dev=&#39;svg&#39;, fig.height=6, fig.wid
 <pre><code>library(rmarkdown)
 browseURL(url = render(knitr::spin(&quot;Ridge_Lasso.R&quot;, knit = FALSE)))</code></pre>
 <p>En <em>RStudio</em> basta con pulsar “Ctrl + Shift + K” o seleccionar <em>File &gt; Knit Document</em> (en las últimas versiones también <em>File &gt; Compile Notebook</em> o hacer clic en el icono correspondiente).</p>
+<p>Por ejemplo, si se quiere convertir la salidas de un fichero de código de R a formato LaTeX (para añadirlas fácilmente a un documento en este formato), bastaría con incluir una cabecera de la forma:</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">#&#39; ---
+#&#39; title: &quot;Título&quot;
+#&#39; author: &quot;Autor&quot;
+#&#39; date: &quot;Fecha&quot;
+#&#39; output:
+#&#39;   pdf_document:
+#&#39;      keep_tex: true
+#&#39; ---</code></pre></div>
 </div>
 <div id="extensiones-rmarkdown-de-pandoc" class="section level2">
 <h2><span class="header-section-number">A.8</span> Extensiones RMarkdown de pandoc</h2>
@@ -658,7 +667,7 @@ y notas al pie con <code>^[texto]</code>.</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">bibliography:</span><span class="at"> bibliografia.bib</span>
 <span class="fu">csl:</span><span class="at"> apa.csl  </span><span class="co"># opcional</span></code></pre></div>
 <p>Suponiendo que en el directorio de trabajo están los ficheros de bibliografía <em>bibliografia.bib</em> y de estilo <em>apa.csl</em> (ver <a href="http://citationstyles.org/" class="uri">http://citationstyles.org/</a>, desde donde se pueden descargar distintos archivos de estilo).</p>
-<p>Las referencias en el texto RMarkdown se incluyen con <code>@referencia</code> o <code>[@referencia]</code>. Pandoc generará el listado de referencias al final del documento, por lo que nos puede interesar insertar una última sección <code># Referencias {-}</code> al generar documentos HTML (en PDF se hará automáticamente al emplear LaTeX). En RStudio se puede instalar el “<a href="https://rstudio.github.io/rstudioaddins/">Addin</a>” <a href="https://github.com/crsh/citr"><code>citr</code></a> para insertar citas a referencias bibliográficas en formato BibTeX.</p>
+<p>Las referencias en el texto RMarkdown se incluyen con <code>@referencia</code> o <code>[@referencia]</code>. Pandoc generará el listado de referencias al final del documento, por lo que nos puede interesar insertar una última sección <code># Bibliografía {-}</code> al generar documentos HTML (en PDF se hará automáticamente al emplear LaTeX). En RStudio se puede instalar el “<a href="https://rstudio.github.io/rstudioaddins/">Addin</a>” <a href="https://github.com/crsh/citr"><code>citr</code></a> para insertar citas a referencias bibliográficas en formato BibTeX.</p>
 <p>Para más detalles de las extensiones de Pandoc ver por ejemplo <a href="https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex">https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex</a> o el manual de Pandoc <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>.</p>
 
 </div>
@@ -677,8 +686,7 @@ y notas al pie con <code>^[texto]</code>.</p>
 <ol start="8">
 <li id="fn8"><p>Se llama al paquete <code>knitr</code> para “tejer” el código de R y los resultados en un fichero Markdown, que posteriormente es procesado con <em>pandoc</em><a href="rmarkdown.html#fnref8">↩</a></p></li>
 <li id="fn9"><p>Si se genera un documento en PDF/LaTeX el gráfico se mostrará en un entorno flotante y se puede ajustar la posición empleando la opción <code>fig.pos</code> (por ejemplo, <code>fig.pos = '!htb'</code>).<a href="rmarkdown.html#fnref9">↩</a></p></li>
-<li id="fn10"><p>La mayoría de los campos YAML son opciones que el paquete <code>rmarkdown</code> le pasa a Pandoc (ver <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>).<a href="rmarkdown.html#fnref10">↩</a></p></li>
-<li id="fn11"><p>Puede ser interesante ejecutar <code>str(rmarkdown::html_document())</code> para ver un listado de todas las opciones disponibles de <code>html_document</code><a href="rmarkdown.html#fnref11">↩</a></p></li>
+<li id="fn10"><p>Puede ser interesante ejecutar <code>str(rmarkdown::html_document())</code> para ver un listado de todas las opciones disponibles de <code>html_document</code><a href="rmarkdown.html#fnref10">↩</a></p></li>
 </ol>
 </div>
             </section>

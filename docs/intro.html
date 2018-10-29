@@ -25,7 +25,7 @@
 <meta name="author" content="Fernández-Casal, R. y Cotos-Yáñez, T.R.">
 
 
-<meta name="date" content="2018-10-25">
+<meta name="date" content="2018-10-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -193,7 +193,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="primeros-pasos" class="section level2">
 <h2><span class="header-section-number">1.2</span> Primeros pasos</h2>
-<p>Si se emplea RStudio (recomendado), lo más cómodo sería crear un proyecto nuevo empleando el menú <em>File &gt; New Project &gt; New Directory &gt; Book project using bookdown</em>. Alternativamente se podría usar como plantilla algún libro publicado (este se puede descargar <a href="https://github.com/rubenfcasal/bookdown_intro/archive/master.zip">aquí</a>). Por ejemplo, el proyecto que crea por defecto RStudio está disponible en el repositorio de GitHub <a href="https://github.com/rstudio/bookdown-demo">rstudio/bookdown-demo</a> y se puede descargar como fichero <a href="https://github.com/rstudio/bookdown-demo/archive/master.zip">Zip</a>. Posteriormente se pueden ir modificando (añadiendo o eliminando) los ficheros <em>.Rmd</em> correspondientes a los distintos capítulos.</p>
+<p>Si se emplea RStudio (recomendado), lo más cómodo sería crear un proyecto nuevo mediante el menú <em>File &gt; New Project &gt; New Directory &gt; Book project using bookdown</em>. Alternativamente se podría usar como plantilla algún libro publicado (este se puede descargar <a href="https://github.com/rubenfcasal/bookdown_intro/archive/master.zip">aquí</a>). Por ejemplo, el proyecto que crea por defecto RStudio está disponible en el repositorio de GitHub <a href="https://github.com/rstudio/bookdown-demo">rstudio/bookdown-demo</a> y se puede descargar como fichero <a href="https://github.com/rstudio/bookdown-demo/archive/master.zip">Zip</a>. Posteriormente se pueden ir modificando (añadiendo o eliminando) los ficheros <em>.Rmd</em> correspondientes a los distintos capítulos.</p>
 <p>Si se abre el proyecto en RStudio, se puede compilar empleando el boton <em>Build Book</em><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> en la pestaña <em>Build</em>. Por defecto se generará el libro (en los distintos formatos) en la carpeta <em>_book</em> y al terminar se abrirá automáticamente la versión HTML. El libro se generará (de forma simultánea en los formatos deseados) a partir de una serie de documentos R Markdown, cada uno correspondiente a un capítulo.</p>
 <p><strong>Nota</strong>: Si se produce un error, puede ser necesario<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> eliminar manualmente los ficheros de salida (e.g.<br />
 <em>book_filename.Rmd</em> o <em>book_filename.md</em>) para poder volver a compilar.</p>
@@ -239,7 +239,7 @@ Cuando se ejecuta la compilación, por defecto se combinan todos los archivos en
 <ol start="1">
 <li id="fn1"><p>Los libros de Hadley <a href="http://adv-r.had.co.nz">Advanced R</a> y <a href="http://r-pkgs.had.co.nz">R packages</a> serían ejemplos con una versión “preliminar” de este paquete.<a href="intro.html#fnref1">↩</a></p></li>
 <li id="fn2"><p>Aunque el autor del paquete <code>bookdown</code> recomienda instalar <a href="https://yihui.name/tinytex">TinyTeX</a>.<a href="intro.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>Alternativamente se puede ejecutar la función <code>render_book()</code> en el directorio del proyecto<a href="intro.html#fnref3">↩</a></p></li>
+<li id="fn3"><p>Alternativamente se puede ejecutar la función <code>render_book()</code> en el directorio del proyecto.<a href="intro.html#fnref3">↩</a></p></li>
 <li id="fn4"><p>Esto debería hacerse automáticamente si se incluye la opción <code>delete_merged_file: true</code> en el fichero de configuración <em>_bookdown.yml</em>.<a href="intro.html#fnref4">↩</a></p></li>
 <li id="fn5"><p>Evitar espacios (y acentos) en los nombres de los ficheros de los capítulos.<a href="intro.html#fnref5">↩</a></p></li>
 </ol>
