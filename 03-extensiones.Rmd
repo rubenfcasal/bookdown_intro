@@ -58,7 +58,7 @@ Para incluir imágenes estáticas, en lugar de emplear la sintaxis habitual de m
 (e.g. `![](rmarkdown.png)`), se puede llamar a la función `knitr::include_graphics()`
 en un bloque de código para poder emplear las extensiones `bookdown`. Por ejemplo, la figura \@ref(fig:rmarkdown) se incluyó con el siguiente código:
 ````markdown
-`r ''````{r rmarkdown, echo=FALSE, out.width='30%', fig.align='center', fig.cap='Logo de rmarkdown (desde archivo PNG).'}
+````r "{r rmarkdown, echo=FALSE, out.width='30%', fig.align='center', fig.cap='Logo de rmarkdown (desde archivo PNG).'}"`
 knitr::include_graphics("images/rmarkdown.png")
 ```
 ````
@@ -102,7 +102,7 @@ Adicionalmente en `bookdown` se pueden incluir ecuaciones numeradas (empleando d
 \begin{equation} 
   f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
   (\#eq:ecuacion1)
-\end
+\end{equation}
 ```
 produce la siguiente ecuación \@ref(eq:ecuacion1):
 \begin{equation}
@@ -181,7 +181,7 @@ knitr::kable(data.frame(
 
 Para usar uno de estos entornos hay que emplear:
 ````markdown
-`r ''````{example, label="foo", name="Entornos de bookdown"}
+````r '{example, label="foo", name="Entornos de bookdown"}'`
 Esto es un ejemplo.
 ```
 ````  
