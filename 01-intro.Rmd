@@ -57,7 +57,7 @@ siguiendo los pasos descritos en la Sección \@ref(conversion).
 ## Primeros pasos
 
 Si se emplea RStudio (recomendado), lo más cómodo sería crear un proyecto nuevo
-empleando el menú *File > New Project > New Directory > Book project using bookdown*.
+mediante el menú *File > New Project > New Directory > Book project using bookdown*.
 Alternativamente se podría usar como plantilla algún libro publicado 
 (este se puede descargar [aquí](https://github.com/rubenfcasal/bookdown_intro/archive/master.zip)).
 Por ejemplo, el proyecto que crea por defecto RStudio está disponible en el repositorio de GitHub [rstudio/bookdown-demo](https://github.com/rstudio/bookdown-demo) y se puede descargar como fichero
@@ -65,7 +65,7 @@ Por ejemplo, el proyecto que crea por defecto RStudio está disponible en el rep
 Posteriormente se pueden ir modificando (añadiendo o eliminando) los ficheros
 *.Rmd* correspondientes a los distintos capítulos.
 
-Si se abre el proyecto en RStudio, se puede compilar empleando el boton *Build Book*^[Alternativamente se puede ejecutar la función `render_book()` en el directorio del proyecto]
+Si se abre el proyecto en RStudio, se puede compilar empleando el boton *Build Book*^[Alternativamente se puede ejecutar la función `render_book()` en el directorio del proyecto.]
 en la pestaña *Build*.
 Por defecto se generará el libro (en los distintos formatos) 
 en la carpeta *\_book* y al terminar se abrirá automáticamente la versión HTML.
