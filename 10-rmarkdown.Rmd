@@ -259,7 +259,7 @@ gear  |  Número de marchas (hacia adelante)
 carb  |  Número de carburadores
 
 
-Para convertir resultados de R en tablas de una forma simple se puede emplear la función `ktable` del paquete *knitr*. Por ejemplo la Tabla \@ref(tab:kable) se obtuvo mediante el siguiente código:
+Para convertir resultados de R en tablas de una forma simple se puede emplear la función `kable()` del paquete *knitr*. Por ejemplo la Tabla \@ref(tab:kable) se obtuvo mediante el siguiente código:
 ```{r kable}
 knitr::kable(
   head(mtcars), 
